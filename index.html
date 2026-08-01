@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IoTGuard — LightGBM Intrusion Detection Engine</title>
+  <title>IoTGuard — AI-Powered Intrusion Detection System & Security Engine</title>
   <meta name="description" content="IoTGuard is a real-time intrusion detection engine for IoT networks using LightGBM classification and SHAP feature attributions on CIC-IoT datasets.">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="IoTGuard — LightGBM Intrusion Detection Engine">
+  <meta property="og:title" content="IoTGuard — AI-Powered Intrusion Detection System">
   <meta property="og:description" content="Sub-2ms packet flow scoring on CIC-IoT datasets with tree-based SHAP attributions and automated netsh/nftables firewall rules.">
   
   <!-- Favicon -->
@@ -36,15 +36,15 @@
 
       <div class="nav-status mono">
         <span class="status-dot"></span>
-        MODEL ENGINE v1.0.2 // LISTENING
+        ENGINE v1.0.2 // ACTIVE MONITORING
       </div>
 
       <div class="nav-links">
+        <a href="#live-demo" class="nav-link highlight">Live Cyber Ops</a>
+        <a href="#pipeline" class="nav-link">Architecture</a>
         <a href="#cli" class="nav-link">Interactive CLI</a>
-        <a href="#pipeline" class="nav-link">Feature Vector</a>
-        <a href="#shap" class="nav-link">SHAP Waterfall</a>
+        <a href="#shap" class="nav-link">SHAP Explainer</a>
         <a href="#benchmarks" class="nav-link">Benchmarks</a>
-        <a href="#specs" class="nav-link">Specs</a>
       </div>
 
       <a href="https://github.com/A7medico/iotguard" target="_blank" class="nav-cta">
@@ -66,36 +66,43 @@
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-            COMPUTER ENGINEERING SENIOR PROJECT
+            COMPUTER ENGINEERING SENIOR CAPSTONE PROJECT
           </div>
           <h1 class="hero-heading">
-            LightGBM Intrusion Detection Engine for <span class="gradient-text">IoT Networks</span>
+            AI-Powered Intrusion Detection Engine for <span class="gradient-text">IoT Networks</span>
           </h1>
           <p class="hero-description">
-            Sub-2ms packet flow scoring on CIC-IoT datasets with tree-based SHAP attributions and automated netsh / nftables firewall rules.
+            Sub-2ms real-time packet flow scoring on CIC-IoT datasets combining LightGBM supervised classification + IsolationForest anomaly detection, with tree-based SHAP attributions and automated netsh / nftables firewall rules.
           </p>
           <div class="hero-actions">
-            <a href="#cli" class="btn-primary">
+            <a href="#live-demo" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Launch Live Cyber Ops Console
+            </a>
+            <a href="#cli" class="btn-secondary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="4 17 10 11 4 5"/>
                 <line x1="12" y1="19" x2="20" y2="19"/>
               </svg>
-              Launch Interactive CLI Shell
-            </a>
-            <a href="#pipeline" class="btn-secondary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"/>
-                <polyline points="8 6 2 12 8 18"/>
-              </svg>
-              Inspect Suricata Vector
+              Interactive CLI Shell
             </a>
           </div>
         </div>
 
         <div class="hero-visual-wrapper">
-          <div class="hud-card radar-hud-box" style="width:100%; aspect-ratio:1/1; max-width:400px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-            <div class="radar-canvas-container" style="width:260px; height:260px; position:relative;">
+          <div class="hud-card radar-hud-box">
+            <div class="hud-card-header mono">
+              <span>CYBER THREAT RADAR</span>
+              <span class="text-cyan">360° SCOPE</span>
+            </div>
+            <div class="radar-canvas-container">
               <canvas id="radarCanvas"></canvas>
+            </div>
+            <div class="radar-legend mono">
+              <span class="legend-item"><span class="dot green"></span> BENIGN</span>
+              <span class="legend-item"><span class="dot red"></span> THREAT DETECTED</span>
             </div>
           </div>
         </div>
@@ -123,6 +130,158 @@
     </div>
   </section>
 
+  <!-- LIVE CYBER OPERATIONS CENTER (REAL-TIME DEMO) -->
+  <section class="ops-section" id="live-demo">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+          [LIVE CYBER OPERATIONS & REAL-TIME ATTACK SIMULATOR]
+        </div>
+        <h2 class="section-title">Live IDS Threat Detection Demo</h2>
+        <p class="section-subtitle">
+          Simulate real IoT network attacks and watch the LightGBM decision engine classify incoming packet flows, compute SHAP attributions, and automatically deploy firewall rules in real-time.
+        </p>
+      </div>
+
+      <!-- SIMULATION CONTROL BAR -->
+      <div class="hud-card sim-control-bar reveal">
+        <div class="sim-ctrl-label mono">
+          <span>SELECT THREAT SCENARIO TO INJECT:</span>
+        </div>
+        <div class="sim-btn-group">
+          <button class="sim-btn active" data-scenario="normal">
+            <span class="status-dot green"></span> Normal Flow
+          </button>
+          <button class="sim-btn danger" data-scenario="ddos">
+            <span class="status-dot red"></span> ⚡ SYN Flood DDoS
+          </button>
+          <button class="sim-btn warning" data-scenario="portscan">
+            <span class="status-dot yellow"></span> 🔍 Stealth Port Scan
+          </button>
+          <button class="sim-btn warning" data-scenario="sqli">
+            <span class="status-dot purple"></span> 💉 HTTP SQL Injection
+          </button>
+        </div>
+      </div>
+
+      <!-- LIVE OPS GRID -->
+      <div class="ops-grid reveal">
+        <!-- LIVE PACKET STREAM HUD -->
+        <div class="hud-card ops-card stream-hud">
+          <div class="hud-card-header mono">
+            <span>PACKET INGESTION STREAM (/dev/suricata)</span>
+            <span class="text-emerald" id="streamStatus">LIVE 1,000 Hz</span>
+          </div>
+          <div class="packet-table-wrapper mono">
+            <table class="packet-table">
+              <thead>
+                <tr>
+                  <th>TIMESTAMP</th>
+                  <th>SRC IP</th>
+                  <th>PROTO</th>
+                  <th>FLOW/SEC</th>
+                  <th>SCORE</th>
+                  <th>ACTION</th>
+                </tr>
+              </thead>
+              <tbody id="packetStreamBody">
+                <!-- Dynamically populated via script -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ENGINE REAL-TIME DECISION GAUGE & FIREWALL LOG -->
+        <div class="ops-side-grid">
+          <!-- DECISION ENGINE SCORE HUD -->
+          <div class="hud-card ops-card gauge-card">
+            <div class="hud-card-header mono">
+              <span>MODEL DECISION ENGINE</span>
+              <span class="text-cyan">LightGBM v1.0.2</span>
+            </div>
+
+            <div class="score-display">
+              <div class="score-title mono" id="scoreThreatType">NORMAL TRAFFIC</div>
+              <div class="score-number mono" id="scoreVal">0.024</div>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" id="scoreBarFill" style="width: 2.4%;"></div>
+              </div>
+              <div class="score-meta mono">
+                <span>0.00 (BENIGN)</span>
+                <span id="scoreBadge" class="badge-safe">SAFE [0.02]</span>
+                <span>1.00 (CRITICAL)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIREWALL AUTO-RESPONSE LOG -->
+          <div class="hud-card ops-card fw-card">
+            <div class="hud-card-header mono">
+              <span>AUTOMATED FIREWALL RULE LOG</span>
+              <span class="text-amber">nftables / netsh</span>
+            </div>
+            <div class="fw-log-body mono" id="fwLogBody">
+              <div class="fw-log-entry text-dim">[00:00:00] Engine listening... Firewall active.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ARCHITECTURE PIPELINE STAGES -->
+  <section class="pipeline-section" id="pipeline">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          [SYSTEM ARCHITECTURE & FEATURE EXTRACTION PIPELINE]
+        </div>
+        <h2 class="section-title">End-to-End IDS Execution Flow</h2>
+        <p class="section-subtitle">
+          Click through each stage to inspect how raw packet streams are transformed into machine learning predictions and automated firewall blocks.
+        </p>
+      </div>
+
+      <!-- INTERACTIVE STAGE SELECTOR CARDS -->
+      <div class="stage-steps-grid reveal">
+        <div class="hud-card stage-step-card active" data-stage="1">
+          <div class="step-num mono">01</div>
+          <div class="step-title">Suricata EVE JSON</div>
+          <div class="step-desc">Raw Packet Ingestion</div>
+        </div>
+        <div class="hud-card stage-step-card" data-stage="2">
+          <div class="step-num mono">02</div>
+          <div class="step-title">Sliding Window</div>
+          <div class="step-desc">13-Feature Aggregator</div>
+        </div>
+        <div class="hud-card stage-step-card" data-stage="3">
+          <div class="step-num mono">03</div>
+          <div class="step-title">LightGBM Classifier</div>
+          <div class="step-desc">Sub-2ms Ensemble</div>
+        </div>
+        <div class="hud-card stage-step-card" data-stage="4">
+          <div class="step-num mono">04</div>
+          <div class="step-title">SHAP & Mitigation</div>
+          <div class="step-desc">nftables / netsh Firewall</div>
+        </div>
+      </div>
+
+      <!-- STAGE CONTENT DISPLAY PANEL -->
+      <div class="hud-card stage-detail-panel reveal" id="stageDetailPanel">
+        <!-- Content populated via JavaScript -->
+      </div>
+    </div>
+  </section>
+
   <!-- INTERACTIVE CLI TERMINAL SHOWCASE -->
   <section class="cli-section" id="cli">
     <div class="container">
@@ -134,9 +293,9 @@
           </svg>
           [SYSTEM COMMAND LINE INTERFACE]
         </div>
-        <h2 class="section-title">Interactive Terminal Prompt</h2>
+        <h2 class="section-title">Interactive CLI Shell Prompt</h2>
         <p class="section-subtitle">
-          Test real engine commands directly in this interactive shell. Try typing <code>status</code>, <code>simulate</code>, <code>inspect</code>, or <code>benchmark</code>.
+          Test real engine commands directly in this interactive shell. Try typing <code>status</code>, <code>simulate</code>, <code>inspect</code>, <code>benchmark</code>, or <code>rules</code>.
         </p>
       </div>
 
@@ -180,129 +339,68 @@ Model: LightGBM v1.0.2 | Accuracy: 96.07% ROC-AUC | Latency: 1.78 ms
     </div>
   </section>
 
-  <!-- RAW SURICATA JSON VS FEATURE VECTOR INSPECTOR -->
-  <section class="pipeline-section" id="pipeline">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
-          </svg>
-          [FEATURE EXTRACTION PIPELINE]
-        </div>
-        <h2 class="section-title">Suricata EVE JSON → 13-Feature Vector</h2>
-        <p class="section-subtitle">
-          Raw network packet flow logs are aggregated in rolling 1-second sliding windows and mapped into numerical feature inputs.
-        </p>
-      </div>
-
-      <div class="code-tabs-wrapper reveal">
-        <!-- RAW JSON INPUT -->
-        <div class="code-box">
-          <div class="code-box-header">
-            <span>INPUT: /var/log/suricata/eve.json</span>
-            <span class="text-dim">RAW PACKET STREAM</span>
-          </div>
-          <div class="code-content"><span class="text-dim">// Suricata Flow Event Record</span>
-{
-  <span class="text-cyan">"timestamp"</span>: <span class="text-emerald">"2026-08-01T13:42:01.002Z"</span>,
-  <span class="text-cyan">"event_type"</span>: <span class="text-emerald">"flow"</span>,
-  <span class="text-cyan">"src_ip"</span>: <span class="text-emerald">"192.168.1.104"</span>,
-  <span class="text-cyan">"dest_ip"</span>: <span class="text-emerald">"10.0.0.1"</span>,
-  <span class="text-cyan">"proto"</span>: <span class="text-emerald">"TCP"</span>,
-  <span class="text-cyan">"tcp"</span>: {
-    <span class="text-cyan">"syn"</span>: true,
-    <span class="text-cyan">"ack"</span>: false,
-    <span class="text-cyan">"tcp_flags"</span>: <span class="text-amber">"02"</span>
-  },
-  <span class="text-cyan">"flow"</span>: {
-    <span class="text-cyan">"pkts_toserver"</span>: <span class="text-amber">4821</span>,
-    <span class="text-cyan">"bytes_toserver"</span>: <span class="text-amber">1420912</span>,
-    <span class="text-cyan">"start"</span>: <span class="text-emerald">"2026-08-01T13:42:00.000Z"</span>
-  }
-}</div>
-        </div>
-
-        <!-- EXTRACTED FEATURE VECTOR -->
-        <div class="code-box">
-          <div class="code-box-header">
-            <span>OUTPUT: feature_extractor.py</span>
-            <span class="text-dim">13-NUMERICAL VECTOR</span>
-          </div>
-          <div class="code-content"><span class="text-dim"># Extracted Numpy Vector -> model.predict_proba(X)</span>
-X_window = np.array([[
-  <span class="text-amber">4821.0</span>,   <span class="text-dim"># flows_per_sec</span>
-  <span class="text-amber">0.982</span>,    <span class="text-dim"># syn_ratio</span>
-  <span class="text-amber">1420.9</span>,   <span class="text-dim"># total_kb_per_sec</span>
-  <span class="text-amber">0.021</span>,    <span class="text-dim"># http_ratio</span>
-  <span class="text-amber">0.004</span>,    <span class="text-dim"># protocol_diversity</span>
-  <span class="text-amber">64.0</span>,     <span class="text-dim"># mean_packet_bytes</span>
-  <span class="text-amber">1.21</span>,     <span class="text-dim"># iat_mean_ms</span>
-  ...
-]])</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- SHAP WATERFALL PLOT SECTION -->
   <section class="shap-section" id="shap">
     <div class="container">
       <div class="section-header">
         <div class="section-tag">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"/>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
           </svg>
-          [EXPLAINABLE AI ENGINE]
+          [TREE SHAP EXPLAINABLE AI ENGINE]
         </div>
-        <h2 class="section-title">SHAP Decision Tree Waterfall Plot</h2>
+        <h2 class="section-title">SHAP Feature Attribution Waterfall</h2>
         <p class="section-subtitle">
-          TreeSHAP calculates exact additive feature attribution values, showing how base expected score $E[f(x)] = 0.124$ shifts to final anomaly probability $f(x) = 0.998$.
+          Tree-SHAP breaks down the model's exact decision reasoning for every classified flow event.
         </p>
       </div>
 
-      <div class="hud-card waterfall-card reveal">
-        <div class="waterfall-header">
-          <div>
-            <span class="text-cyan">EVENT #4092: 192.168.1.104</span>
-            <span class="text-dim" style="margin-left: 12px;">DDoS: SYN Flood</span>
+      <div class="hud-card shap-box reveal">
+        <div class="shap-header mono">
+          <div class="shap-title-text">
+            <span>SAMPLE ATTACK EVENT: SYN FLOOD DDoS (Score: 0.998)</span>
           </div>
-          <div class="mono text-emerald">f(x) = 0.998 (CRITICAL)</div>
+          <div class="shap-badge text-emerald">SHAP TreeExplainer</div>
         </div>
 
-        <div class="waterfall-rows">
+        <div class="waterfall-chart mono">
           <div class="wf-row" data-val="7.37">
-            <span class="wf-feature">flows_per_sec (4821)</span>
-            <div class="wf-track"><div class="wf-bar positive"></div></div>
-            <span class="wf-val text-crimson">+7.37</span>
+            <div class="wf-label">flows_per_sec</div>
+            <div class="wf-bar-track">
+              <div class="wf-bar positive" style="width: 75%;"></div>
+            </div>
+            <div class="wf-val text-emerald">+7.37</div>
           </div>
-
           <div class="wf-row" data-val="4.01">
-            <span class="wf-feature">syn_ratio (0.98)</span>
-            <div class="wf-track"><div class="wf-bar positive"></div></div>
-            <span class="wf-val text-crimson">+4.01</span>
+            <div class="wf-label">syn_ratio</div>
+            <div class="wf-bar-track">
+              <div class="wf-bar positive" style="width: 48%;"></div>
+            </div>
+            <div class="wf-val text-emerald">+4.01</div>
           </div>
-
           <div class="wf-row" data-val="2.57">
-            <span class="wf-feature">bytes_total (1.42 MB)</span>
-            <div class="wf-track"><div class="wf-bar positive"></div></div>
-            <span class="wf-val text-crimson">+2.57</span>
+            <div class="wf-label">bytes_toserver</div>
+            <div class="wf-bar-track">
+              <div class="wf-bar positive" style="width: 30%;"></div>
+            </div>
+            <div class="wf-val text-emerald">+2.57</div>
           </div>
-
           <div class="wf-row" data-val="-0.84">
-            <span class="wf-feature">http_ratio (0.02)</span>
-            <div class="wf-track"><div class="wf-bar negative"></div></div>
-            <span class="wf-val text-emerald">-0.84</span>
+            <div class="wf-label">http_ratio</div>
+            <div class="wf-bar-track">
+              <div class="wf-bar negative" style="width: 12%;"></div>
+            </div>
+            <div class="wf-val text-dim">-0.84</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENCHMARK COMPARISON MATRIX -->
-  <section class="benchmark-section" id="benchmarks">
+  <!-- MODEL BENCHMARKS TABLE -->
+  <section class="benchmarks-section" id="benchmarks">
     <div class="container">
       <div class="section-header">
         <div class="section-tag">
@@ -311,34 +409,34 @@ X_window = np.array([[
             <line x1="12" y1="20" x2="12" y2="4"/>
             <line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
-          [EMPIRICAL BENCHMARKS]
+          [BENCHMARK COMPARISON MATRIX]
         </div>
-        <h2 class="section-title">Cross-Validation Performance Matrix</h2>
+        <h2 class="section-title">CIC-IoT-2023 Cross-Model Benchmark</h2>
         <p class="section-subtitle">
-          Evaluated on 2.1M+ samples from CIC-IoT-2023 datasets against standard machine learning classifiers.
+          LightGBM outperforms Random Forest and Deep Neural Networks in latency and memory footprint.
         </p>
       </div>
 
-      <div class="table-wrapper reveal">
-        <table class="bench-table">
+      <div class="hud-card benchmark-table-card reveal">
+        <table class="benchmark-table mono">
           <thead>
             <tr>
-              <th>Model Architecture</th>
+              <th>MODEL ARCHITECTURE</th>
               <th>ROC-AUC</th>
               <th>PR-AUC</th>
-              <th>Inference Latency</th>
-              <th>Memory Footprint</th>
-              <th>Status</th>
+              <th>INFERENCE LATENCY</th>
+              <th>MEMORY FOOTPRINT</th>
+              <th>DEPLOYMENT STATUS</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="highlight">
-              <td>LightGBM Ensemble (IoTGuard) <span class="badge-best">SELECTED</span></td>
-              <td>96.07%</td>
-              <td>97.10%</td>
-              <td>1.78 ms</td>
-              <td>48.2 MB</td>
-              <td class="text-emerald">PRODUCTION</td>
+            <tr class="active-row">
+              <td><strong>LightGBM (IoTGuard Engine)</strong></td>
+              <td class="text-emerald">96.07%</td>
+              <td class="text-emerald">97.10%</td>
+              <td class="text-emerald">1.78 ms</td>
+              <td class="text-emerald">48.2 MB</td>
+              <td><span class="badge-active">PRODUCTION DEPLOYED</span></td>
             </tr>
             <tr>
               <td>XGBoost Classifier</td>
@@ -346,23 +444,23 @@ X_window = np.array([[
               <td>96.85%</td>
               <td>4.12 ms</td>
               <td>112.4 MB</td>
-              <td>EVALUATED</td>
+              <td class="text-dim">Benchmarked</td>
             </tr>
             <tr>
-              <td>Random Forest (100 Trees)</td>
+              <td>Random Forest (n=100)</td>
               <td>93.40%</td>
               <td>94.10%</td>
               <td>8.45 ms</td>
               <td>210.0 MB</td>
-              <td>EVALUATED</td>
+              <td class="text-dim">Benchmarked</td>
             </tr>
             <tr>
-              <td>Deep Neural Net (MLP)</td>
+              <td>Deep Neural Net (3-Layer MLP)</td>
               <td>91.15%</td>
               <td>92.05%</td>
               <td>12.30 ms</td>
               <td>340.0 MB</td>
-              <td>DISCARDED</td>
+              <td class="text-dim">Benchmarked</td>
             </tr>
           </tbody>
         </table>
@@ -370,53 +468,14 @@ X_window = np.array([[
     </div>
   </section>
 
-  <!-- TECH STACK & SPECS -->
-  <section class="tech-section" id="specs">
-    <div class="container">
-      <div class="section-header" style="text-align: center;">
-        <div class="section-tag">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
-          </svg>
-          [SYSTEM SPECIFICATIONS]
-        </div>
-        <h2 class="section-title">Production Technology Stack</h2>
-      </div>
-
-      <div class="tech-grid reveal">
-        <div class="tech-badge">🐍 Python 3.13</div>
-        <div class="tech-badge">🌿 LightGBM</div>
-        <div class="tech-badge">🔬 SHAP</div>
-        <div class="tech-badge">🧪 scikit-learn</div>
-        <div class="tech-badge">🌐 Flask REST API</div>
-        <div class="tech-badge">📊 Chart.js</div>
-        <div class="tech-badge">🐳 Docker Containerized</div>
-        <div class="tech-badge">🧹 Suricata IDS</div>
-        <div class="tech-badge">✅ Pytest (112 Tests)</div>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
-  <footer>
-    <div class="container footer-inner">
-      <div class="brand">
-        <div class="brand-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        IoTGuard Engine
+  <footer class="footer">
+    <div class="container footer-inner mono">
+      <div>© 2026 Ahmad Ismail — IoTGuard Security System</div>
+      <div class="footer-links">
+        <a href="https://github.com/A7medico/iotguard" target="_blank">GitHub</a>
+        <a href="https://a7medico.github.io" target="_blank">Portfolio</a>
       </div>
-
-      <p class="footer-text">
-        AI-Powered Intrusion Detection System for IoT Networks<br>
-        Computer Engineering Senior Project · <a href="https://a7medico.github.io" target="_blank" class="footer-link">Ahmad Ismail</a>
-      </p>
-
-      <p class="mono text-dim" style="font-size: 11.5px;">
-        © 2026 IoTGuard Engine. Built with Python & LightGBM.
-      </p>
     </div>
   </footer>
 
