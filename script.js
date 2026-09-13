@@ -1,226 +1,271 @@
 /* ============================================================
-   IOTGUARD — SYSTEMS ENGINEERING INTERACTIVE LOGIC
-   CLI Shell Prompt, SHAP Waterfall Plot & Model Benchmarks
+   IOTGUARD — Modern Interactive Logic
+   CLI, Counters, Waterfall, 3D Card Tilt, Scroll Effects
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ============================================================
-     1. RADAR CANVAS SWEEP ANIMATION
-     ============================================================ */
-  const canvas = document.getElementById('radarCanvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = 280;
-    let height = canvas.height = 280;
-    const centerX = width / 2;
-    const centerY = height / 2;
-    const radius = Math.min(width, height) / 2 - 10;
-    let angle = 0;
-
-    const blips = [
-      { r: radius * 0.45, a: 1.2, size: 4, type: 'attack' },
-      { r: radius * 0.75, a: 3.4, size: 5, type: 'attack' },
-      { r: radius * 0.3, a: 5.1, size: 3, type: 'benign' },
-      { r: radius * 0.85, a: 0.5, size: 4, type: 'benign' },
-    ];
-
-    function drawRadar() {
-      ctx.clearRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.25)';
-      ctx.lineWidth = 1.5;
-      
-      [0.3, 0.6, 0.9].forEach(factor => {
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius * factor, 0, Math.PI * 2);
-        ctx.stroke();
-      });
-
-      ctx.beginPath();
-      ctx.moveTo(centerX - radius, centerY);
-      ctx.lineTo(centerX + radius, centerY);
-      ctx.moveTo(centerX, centerY - radius);
-      ctx.lineTo(centerX, centerY + radius);
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.12)';
-      ctx.stroke();
-
-      blips.forEach(b => {
-        const x = centerX + b.r * Math.cos(b.a);
-        const y = centerY + b.r * Math.sin(b.a);
-        
-        ctx.beginPath();
-        ctx.arc(x, y, b.size, 0, Math.PI * 2);
-        ctx.fillStyle = b.type === 'attack' ? 'rgba(239, 68, 68, 0.85)' : 'rgba(16, 185, 129, 0.85)';
-        ctx.fill();
-      });
-
-      ctx.save();
-      ctx.beginPath();
-      ctx.moveTo(centerX, centerY);
-      ctx.arc(centerX, centerY, radius * 0.9, angle, angle + 0.35);
-      ctx.closePath();
-      
-      const grad = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
-      grad.addColorStop(0, 'rgba(6, 182, 212, 0.25)');
-      grad.addColorStop(1, 'rgba(6, 182, 212, 0.02)');
-      ctx.fillStyle = grad;
-      ctx.fill();
-      ctx.restore();
-
-      ctx.beginPath();
-      ctx.moveTo(centerX, centerY);
-      ctx.lineTo(centerX + radius * 0.9 * Math.cos(angle + 0.35), centerY + radius * 0.9 * Math.sin(angle + 0.35));
-      ctx.strokeStyle = 'rgba(6, 182, 212, 0.9)';
-      ctx.lineWidth = 2;
-      ctx.stroke();
-
-      angle += 0.025;
-      if (angle > Math.PI * 2) angle = 0;
-
-      requestAnimationFrame(drawRadar);
-    }
-
-    drawRadar();
-  }
-
-  /* ============================================================
-     2. INTERACTIVE CLI SHELL PROMPT ($ iotguard)
+     1. CLI TERMINAL
      ============================================================ */
   const cliOutput = document.getElementById('cliOutput');
   const cliInput = document.getElementById('cliInput');
-  const cliChips = document.querySelectorAll('.cli-chip');
+  const cmdBtns = document.querySelectorAll('.cmd-chip');
 
-  const cliCommands = {
-    help: `Available IoTGuard CLI Commands:
-  status        Check engine health, model build, and detection threshold
-  simulate      Run attack simulation window (DDoS, Port Scan, HTTP Injection)
-  inspect       Print SHAP feature vector breakdown for sample packet window
-  benchmark     Display cross-validation performance vs XGBoost & Random Forest
-  rules         List active netsh / nftables firewall rules
-  clear         Clear the terminal screen`,
-    
+  const commands = {
+    help: `Available commands:
+  status      Engine health and model info
+  simulate    Run a DDoS attack simulation
+  inspect     SHAP breakdown for a sample event
+  benchmark   Model comparison table
+  rules       Active firewall rules
+  clear       Clear terminal`,
+
     status: `[IoTGuard Engine Status]
-  Status:           OPERATIONAL (Listening on Suricata socket /var/log/suricata/eve.json)
-  Model Engine:     LightGBM v1.0.2 (Supervised) + IsolationForest (Unsupervised Anomaly)
-  Accuracy (AUC):   96.07% ROC-AUC | 97.10% PR-AUC
-  Inference Speed:  1.78 ms / packet window (13 features)
-  Thresholds:       Soft Alert >= 0.85 | Netsh Block-Kill >= 0.90
-  Memory Usage:     48.2 MB RSS
-  Pytest Suite:     112 / 112 Tests Passing [OK]`,
+  Status:        OPERATIONAL
+  Socket:        /var/log/suricata/eve.json
+  Model:         LightGBM v1.0.2 + IsolationForest
+  ROC-AUC:       96.07%  |  PR-AUC: 97.10%
+  Latency:       1.78 ms / window (13 features)
+  Thresholds:    Alert >= 0.85  |  Block >= 0.90
+  Memory:        48.2 MB RSS
+  Tests:         112 / 112 passing`,
 
-    simulate: `[Running Attack Simulation...]
-  [00:01] Injecting SYN Flood flow window (5,000 packets/sec)...
-  [00:02] Decision Engine Score: 0.998 [CRITICAL BREACH]
-  [00:02] Top SHAP Contributor:  flows_per_sec (+7.37), syn_ratio (+4.01)
-  [00:02] Mitigation Triggered: nftables add element inet filter blacklist { 192.168.1.104 }
-  [00:03] Simulation Complete. Flow successfully mitigated.`,
+    simulate: `[Attack Simulation]
+  [00:01] Injecting SYN Flood (5,000 pkt/s)...
+  [00:02] Score: 0.998 — CRITICAL
+  [00:02] Top features: flows_per_sec (+7.37), syn_ratio (+4.01)
+  [00:02] → nftables blacklist { 192.168.1.104 }
+  [00:03] Flow mitigated.`,
 
-    inspect: `[SHAP Feature Vector Breakdown — Event #4092 (192.168.1.104)]
-  Base Expected Value E[f(x)] = 0.124
-  -------------------------------------------------------------
-  Feature Name          Feature Value      SHAP Push Vector
-  -------------------------------------------------------------
-  flows_per_sec         4,821 /s           +7.37 [POSITIVE PUSH]
-  syn_ratio             0.98               +4.01 [POSITIVE PUSH]
-  bytes_total           1.42 MB            +2.57 [POSITIVE PUSH]
-  http_ratio            0.02               -0.84 [NEGATIVE PUSH]
-  -------------------------------------------------------------
-  Final Probability Score f(x) = 0.998 -> CLASSIFIED: DDoS (SYN Flood)`,
+    inspect: `[SHAP Breakdown — Event #4092]
+  Base E[f(x)] = 0.124
+  ─────────────────────────────────────────────
+  Feature              Value        SHAP
+  ─────────────────────────────────────────────
+  flows_per_sec        4,821/s      +7.37
+  syn_ratio            0.98         +4.01
+  bytes_total          1.42 MB      +2.57
+  http_ratio           0.02         -0.84
+  ─────────────────────────────────────────────
+  f(x) = 0.998 → DDoS (SYN Flood)`,
 
-    benchmark: `[Cross-Validation Model Benchmark Matrix — CIC-IoT-2023]
-  Model Name          ROC-AUC     PR-AUC    Latency (ms)   Memory (MB)
-  -------------------------------------------------------------
-  LightGBM (Used)     96.07%      97.10%    1.78 ms        48.2 MB   [BEST]
-  XGBoost             95.82%      96.85%    4.12 ms        112.4 MB
-  Random Forest       93.40%      94.10%    8.45 ms        210.0 MB
-  Deep Neural Net     91.15%      92.05%    12.30 ms       340.0 MB`,
+    benchmark: `[Benchmark — CIC-IoT-2023]
+  Model              ROC-AUC   PR-AUC   Latency    Memory
+  ─────────────────────────────────────────────────────────
+  LightGBM (ours)    96.07%    97.10%   1.78 ms    48.2 MB
+  XGBoost            95.82%    96.85%   4.12 ms    112 MB
+  Random Forest      93.40%    94.10%   8.45 ms    210 MB
+  MLP                91.15%    92.05%   12.3 ms    340 MB`,
 
-    rules: `[Active Automated Firewall Rules]
-  RULE #1: BLOCK inet filter blacklist ip=192.168.1.104 (DDoS SYN Flood — Severity: KILL)
-  RULE #2: BLOCK inet filter blacklist ip=192.168.1.189 (Port Scan — Severity: HARD)
-  RULE #3: SOFT ALERT ip=192.168.1.201 (HTTP Injection — Grace hits: 1/3)`
+    rules: `[Firewall Rules]
+  #1  BLOCK  192.168.1.104  DDoS SYN Flood    (KILL)
+  #2  BLOCK  192.168.1.189  Port Scan         (HARD)
+  #3  ALERT  192.168.1.201  HTTP Injection    (1/3 grace)`
   };
 
-  function executeCliCommand(cmdStr) {
-    const cleanCmd = cmdStr.trim().toLowerCase();
-    
-    if (!cleanCmd) return;
+  function runCmd(str) {
+    const cmd = str.trim().toLowerCase();
+    if (!cmd) return;
+    if (cmd === 'clear') { if (cliOutput) cliOutput.innerHTML = ''; return; }
 
-    if (cleanCmd === 'clear') {
-      if (cliOutput) cliOutput.innerHTML = '';
-      return;
-    }
+    const block = document.createElement('div');
+    block.style.marginBottom = '10px';
 
-    const commandEntry = document.createElement('div');
-    commandEntry.style.marginBottom = '12px';
+    const line = document.createElement('div');
+    line.className = 't-line';
+    line.innerHTML = `<span class="t-prompt">$</span> <span class="t-cmd">iotguard ${cmd}</span>`;
 
-    const promptLine = document.createElement('div');
-    promptLine.className = 'cli-line';
-    promptLine.innerHTML = `<span class="cli-prompt">$ iotguard</span> <span class="cli-cmd">${cleanCmd}</span>`;
+    const out = document.createElement('div');
+    out.className = 't-output';
 
-    const responseLine = document.createElement('div');
-    responseLine.className = 'cli-output';
-
-    if (cliCommands[cleanCmd]) {
-      responseLine.textContent = cliCommands[cleanCmd];
+    if (commands[cmd]) {
+      out.textContent = commands[cmd];
     } else {
-      responseLine.textContent = `Command not recognized: '${cleanCmd}'. Type 'help' for available options.`;
-      responseLine.style.color = 'var(--crimson)';
+      out.textContent = `Unknown command: '${cmd}'. Type 'help' for options.`;
+      out.style.color = 'var(--red)';
     }
 
-    commandEntry.appendChild(promptLine);
-    commandEntry.appendChild(responseLine);
+    block.appendChild(line);
+    block.appendChild(out);
 
     if (cliOutput) {
-      cliOutput.appendChild(commandEntry);
+      cliOutput.appendChild(block);
       cliOutput.parentElement.scrollTop = cliOutput.parentElement.scrollHeight;
     }
   }
 
   if (cliInput) {
-    cliInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const val = cliInput.value;
-        cliInput.value = '';
-        executeCliCommand(val);
-      }
+    cliInput.addEventListener('keydown', e => {
+      if (e.key === 'Enter') { runCmd(cliInput.value); cliInput.value = ''; }
     });
   }
 
-  cliChips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const cmd = chip.dataset.cmd;
-      if (cmd) executeCliCommand(cmd);
+  cmdBtns.forEach(btn => {
+    btn.addEventListener('click', () => { if (btn.dataset.cmd) runCmd(btn.dataset.cmd); });
+  });
+
+  /* ============================================================
+     2. ANIMATED STAT COUNTERS (works for both .stat-value and .bento-stat)
+     ============================================================ */
+  const counters = document.querySelectorAll('[data-target]');
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const decimals = target.toString().includes('.')
+        ? target.toString().split('.')[1].length : 0;
+      const duration = 1800;
+      const start = performance.now();
+
+      function tick(now) {
+        const t = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = (target * eased).toFixed(decimals) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(el => counterObs.observe(el));
+
+  /* ============================================================
+     3. BENTO CARD 3D TILT EFFECT
+     ============================================================
+     Cards subtly tilt toward the mouse cursor on hover.
+  */
+  const bentoCards = document.querySelectorAll('.bento-card');
+  bentoCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -4; // max 4 degrees
+      const rotateY = ((x - centerX) / centerX) * 4;
+
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) translateY(0)';
     });
   });
 
   /* ============================================================
-     3. SHAP WATERFALL PLOT ANIMATOR
+     4. SHAP WATERFALL BAR ANIMATION
      ============================================================ */
-  const shapWaterfallRows = document.querySelectorAll('.wf-row');
-  
-  shapWaterfallRows.forEach(row => {
-    const val = parseFloat(row.dataset.val);
-    const bar = row.querySelector('.wf-bar');
-    if (bar) {
-      setTimeout(() => {
-        bar.style.width = `${Math.min(Math.abs(val) * 12, 100)}%`;
-      }, 300);
-    }
-  });
+  const waterfall = document.querySelector('.waterfall');
+  if (waterfall) {
+    const wfObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const rows = entry.target.querySelectorAll('.wf-row');
+        rows.forEach((row, i) => {
+          const val = parseFloat(row.dataset.val);
+          const bar = row.querySelector('.wf-bar');
+          if (bar) {
+            setTimeout(() => {
+              bar.style.width = `${Math.min(Math.abs(val) * 12, 100)}%`;
+            }, 200 + i * 180);
+          }
+        });
+        wfObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+    wfObs.observe(waterfall);
+  }
 
   /* ============================================================
-     4. SCROLL REVEAL OBSERVER
+     5. SCROLL REVEAL
      ============================================================ */
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+  const revealObs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.06 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  /* ============================================================
+     6. ACTIVE NAV HIGHLIGHTING
+     ============================================================ */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links .nav-link');
+
+  function updateNav() {
+    const y = window.scrollY + 150;
+    sections.forEach(sec => {
+      const top = sec.offsetTop;
+      const h = sec.offsetHeight;
+      const id = sec.id;
+      if (y >= top && y < top + h) {
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
       }
     });
-  }, { threshold: 0.1 });
+  }
+  window.addEventListener('scroll', updateNav, { passive: true });
 
-  reveals.forEach(el => observer.observe(el));
+  /* ============================================================
+     7. MOBILE MENU
+     ============================================================ */
+  const ham = document.getElementById('hamburgerBtn');
+  const drawer = document.getElementById('mobileDrawer');
+  if (ham && drawer) {
+    ham.addEventListener('click', () => {
+      const open = drawer.classList.toggle('open');
+      ham.classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        ham.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ============================================================
+     8. HERO TERMINAL TYPING EFFECT
+     ============================================================
+     Simulates typing the terminal output when page loads.
+  */
+  const heroTermBody = document.querySelector('.hero-terminal-body');
+  if (heroTermBody) {
+    const originalHTML = heroTermBody.innerHTML;
+    heroTermBody.innerHTML = '';
+    heroTermBody.style.opacity = '1';
+
+    // Convert to text chunks for typing
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = originalHTML;
+    const fullText = wrapper.textContent;
+
+    let charIndex = 0;
+    const speed = 12; // ms per character
+
+    function typeChar() {
+      if (charIndex <= fullText.length) {
+        // Rebuild with original HTML, but slice to current position
+        // Simple approach: reveal the whole thing character-mapped
+        heroTermBody.innerHTML = originalHTML;
+        heroTermBody.style.clipPath = `inset(0 ${100 - (charIndex / fullText.length) * 100}% 0 0)`;
+        charIndex += 2;
+        requestAnimationFrame(() => setTimeout(typeChar, speed));
+      } else {
+        heroTermBody.style.clipPath = 'none';
+      }
+    }
+
+    // Start after a brief delay
+    setTimeout(typeChar, 600);
+  }
+
 });
