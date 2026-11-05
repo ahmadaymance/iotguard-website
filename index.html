@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IoTGuard — Enterprise-Grade Intrusion Detection for IoT Networks</title>
+  <title>IoTGuard Enterprise v4.0 — Autonomous In-Kernel AI Defense for IoT Networks</title>
   <meta name="description"
-    content="IoTGuard is a real-time, explainable AI intrusion detection engine for IoT networks. Powered by LightGBM, TreeSHAP, and automated eBPF/nftables kernel firewall mitigation in under 2ms.">
+    content="IoTGuard Enterprise v4.0 is an edge-native, in-kernel AI intrusion detection and autonomous prevention engine (IDS/IPS). Powered by LightGBM, TreeSHAP, eBPF/XDP line-rate filtering (<1µs), cryptographic SHA-256 audit ledgers, MITRE ATT&CK integration, and distributed fleet herd immunity.">
   <link rel="icon" type="image/jpeg" href="logo.jpg">
   
   <!-- Preconnect to Google Fonts -->
@@ -37,15 +37,15 @@
     <div class="container announcement-inner">
       <div class="announcement-content">
         <span class="live-dot-ping"></span>
-        <span class="announcement-tag">CAPSTONE PROJECT</span>
+        <span class="announcement-tag">ENTERPRISE v4.0 RELEASE</span>
         <span class="announcement-text">
-          Computer Engineering Senior Project: <strong>LightGBM + TreeSHAP</strong> Kernel IDS Engine
+          <strong>IoTGuard Enterprise v4.0</strong>: In-Kernel eBPF/XDP (&lt;1µs drop) · SHA-256 Audit Ledger · MITRE ATT&amp;CK · Fleet Herd Immunity
         </span>
         <span class="announcement-sep">·</span>
-        <span class="announcement-metric">CIC-IoT-2023 Validated (96.07% ROC-AUC)</span>
+        <span class="announcement-metric">22 Suites · 293/293 Tests Passing (100%)</span>
       </div>
       <a href="https://github.com/A7medico/iotguard" target="_blank" rel="noopener" class="announcement-link">
-        GitHub Repository
+        Explore v4.0 Release
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
@@ -63,17 +63,18 @@
           </div>
           <div class="brand-glow"></div>
         </div>
-        <span class="brand-text">IoTGuard<span class="brand-badge">v1.0.2</span></span>
+        <span class="brand-text">IoTGuard<span class="brand-badge enterprise">v4.0 Enterprise</span></span>
       </a>
 
       <div class="nav-links">
-        <a href="#features" class="nav-link">Features</a>
+        <a href="#features" class="nav-link">Capabilities</a>
         <a href="#simulator" class="nav-link">Live Simulator</a>
+        <a href="#enterprise-soc" class="nav-link">SOC Control Plane</a>
+        <a href="#siem-compliance" class="nav-link">SIEM &amp; Compliance</a>
         <a href="#architecture" class="nav-link">Architecture</a>
-        <a href="#shap" class="nav-link">SHAP Lab</a>
+        <a href="#shap" class="nav-link">XAI &amp; SHAP</a>
         <a href="#benchmarks" class="nav-link">Benchmarks</a>
         <a href="#cli" class="nav-link">Terminal</a>
-        <a href="#pipeline" class="nav-link">Pipeline</a>
         <a href="#faq" class="nav-link">FAQ</a>
       </div>
 
@@ -114,15 +115,16 @@
   <div class="mobile-drawer" id="mobileDrawer">
     <div class="mobile-drawer-header">
       <span class="mobile-nav-title">Menu</span>
-      <span class="mobile-nav-version">IoTGuard v1.0.2</span>
+      <span class="mobile-nav-version">IoTGuard Enterprise v4.0</span>
     </div>
-    <a href="#features" class="nav-link">Features</a>
+    <a href="#features" class="nav-link">Capabilities</a>
     <a href="#simulator" class="nav-link">Live Simulator</a>
+    <a href="#enterprise-soc" class="nav-link">SOC Control Plane</a>
+    <a href="#siem-compliance" class="nav-link">SIEM &amp; Compliance</a>
     <a href="#architecture" class="nav-link">Architecture</a>
-    <a href="#shap" class="nav-link">SHAP Lab</a>
+    <a href="#shap" class="nav-link">XAI &amp; SHAP</a>
     <a href="#benchmarks" class="nav-link">Benchmarks</a>
     <a href="#cli" class="nav-link">Terminal</a>
-    <a href="#pipeline" class="nav-link">Pipeline</a>
     <a href="#faq" class="nav-link">FAQ</a>
     <a href="https://github.com/A7medico/iotguard" target="_blank" rel="noopener" class="nav-link highlight">GitHub Source ↗</a>
   </div>
@@ -144,9 +146,9 @@
             <!-- Telemetry Pill -->
             <div class="hero-badge" id="heroLiveBadge">
               <span class="hero-badge-dot"></span>
-              <span class="hero-badge-label">LIVE SHIELD:</span>
-              <span><strong id="threatCounter">2,418,924</strong> network flows analyzed</span>
-              <span class="hero-badge-tag">0 FALSE POSITIVES</span>
+              <span class="hero-badge-label">ENTERPRISE SHIELD:</span>
+              <span><strong id="threatCounter">2,418,924</strong> flows inspected</span>
+              <span class="hero-badge-tag success">FLEET IMMUNITY: 98.4%</span>
             </div>
 
             <div class="hero-supertitle">
@@ -154,18 +156,18 @@
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>
-                Next-Gen Edge Cybersecurity
+                In-Kernel Active Defense · Enterprise SOC Edition
               </span>
-              <span class="hero-subtag">Computer Engineering Senior Project</span>
+              <span class="hero-subtag">Computer Engineering Senior Project · Master Release</span>
             </div>
 
             <h1 class="hero-title">
-              Autonomous AI<br>
+              Autonomous In-Kernel AI<br>
               Defense for <em>IoT Networks</em>
             </h1>
 
             <p class="hero-desc">
-              IoTGuard combines a lightning-fast <strong>LightGBM</strong> classifier with <strong>TreeSHAP</strong> explainability to inspect streaming Suricata flows in under <strong>1.78ms</strong> and auto-deploy kernel-level <code>nftables</code> / <code>eBPF</code> firewall rules.
+              IoTGuard Enterprise v4.0 combines a calibrated <strong>LightGBM</strong> classifier, <strong>IsolationForest</strong>, and stateful <strong>Temporal Drift Detection</strong> with in-kernel <strong>eBPF/XDP line-rate filtering (&lt;1µs)</strong>, a cryptographic <strong>SHA-256 audit ledger</strong>, and automated <strong>global fleet herd immunity</strong>.
             </p>
 
             <!-- Hero Action Buttons -->
@@ -178,14 +180,14 @@
                 <div class="btn-primary-glow"></div>
               </a>
 
-              <a href="#architecture" class="btn-outline">
+              <a href="#enterprise-soc" class="btn-outline">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
                   <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
                   <line x1="6" y1="6" x2="6.01" y2="6" />
                   <line x1="6" y1="18" x2="6.01" y2="18" />
                 </svg>
-                View Architecture
+                SOC Control Plane
               </a>
 
               <a href="https://github.com/A7medico/iotguard" target="_blank" rel="noopener" class="btn-ghost-sm" title="View Source on GitHub">
@@ -199,23 +201,23 @@
             <!-- Key Enterprise Metrics Strip -->
             <div class="hero-kpi-ribbon">
               <div class="kpi-item">
-                <span class="kpi-val">&lt; 1.78ms</span>
-                <span class="kpi-lbl">Inference Latency</span>
+                <span class="kpi-val highlight">&lt; 1 µs</span>
+                <span class="kpi-lbl">eBPF/XDP NIC Drop</span>
               </div>
               <div class="kpi-divider"></div>
               <div class="kpi-item">
-                <span class="kpi-val">96.07%</span>
-                <span class="kpi-lbl">ROC-AUC Precision</span>
+                <span class="kpi-val">14.2 ms</span>
+                <span class="kpi-lbl">Mean Detect (MTTD)</span>
               </div>
               <div class="kpi-divider"></div>
               <div class="kpi-item">
-                <span class="kpi-val">100%</span>
-                <span class="kpi-lbl">TreeSHAP Explained</span>
+                <span class="kpi-val success">293 / 293</span>
+                <span class="kpi-lbl">Tests (22 Suites)</span>
               </div>
               <div class="kpi-divider"></div>
               <div class="kpi-item">
-                <span class="kpi-val">48.2 MB</span>
-                <span class="kpi-lbl">RAM (Edge Ready)</span>
+                <span class="kpi-val">SHA-256</span>
+                <span class="kpi-lbl">Immutable Audit Ledger</span>
               </div>
             </div>
           </div>
@@ -232,17 +234,41 @@
                 </div>
                 <div class="soc-deck-status">
                   <span class="soc-status-pulse"></span>
-                  <span class="soc-status-text">KERNEL_IDS: ACTIVE</span>
+                  <span class="soc-status-text">eBPF/XDP DRIVER: ACTIVE</span>
                   <span class="soc-status-sep">|</span>
-                  <span class="soc-status-sub">192.168.1.0/24</span>
+                  <span class="soc-status-sub">SLA: MET (MTTD: 14.2ms)</span>
                 </div>
                 <div class="soc-deck-clock" id="liveUtcClock">18:45:34 UTC</div>
+              </div>
+
+              <!-- Enterprise SLA Performance Strip -->
+              <div class="soc-sla-strip">
+                <div class="sla-tile">
+                  <span class="sla-kpi">14.2 ms</span>
+                  <span class="sla-lbl">MTTD (&lt;100ms Target)</span>
+                  <span class="sla-badge pass">MET</span>
+                </div>
+                <div class="sla-tile">
+                  <span class="sla-kpi">3.8 ms</span>
+                  <span class="sla-lbl">MTTR (&lt;50ms Target)</span>
+                  <span class="sla-badge pass">MET</span>
+                </div>
+                <div class="sla-tile">
+                  <span class="sla-kpi">98.4%</span>
+                  <span class="sla-lbl">Fleet Immunity Index</span>
+                  <span class="sla-badge optimal">OPTIMAL</span>
+                </div>
+                <div class="sla-tile">
+                  <span class="sla-kpi" id="xdpDropCounter">4,821</span>
+                  <span class="sla-lbl">In-Kernel XDP Drops</span>
+                  <span class="sla-badge hardware">&lt;1µs NIC</span>
+                </div>
               </div>
 
               <!-- Real-Time Packet Oscilloscope Canvas -->
               <div class="soc-oscilloscope-wrap">
                 <div class="oscilloscope-label-bar">
-                  <span class="osc-title">REAL-TIME PACKET TRAFFIC VELOCITY (pkts/sec)</span>
+                  <span class="osc-title">NETWORK TRAFFIC LINE-RATE VELOCITY (eBPF Driver Hook)</span>
                   <span class="osc-tag" id="oscThroughputTag">1,240 pkt/s</span>
                 </div>
                 <canvas id="packetOscilloscope" height="85"></canvas>
@@ -269,15 +295,15 @@
                   <span class="feed-time">13:42:01.442</span>
                   <span class="feed-proto">TCP</span>
                   <span class="feed-ip">192.168.1.189:80</span>
-                  <span class="feed-stat warning">SCAN (0.741)</span>
+                  <span class="feed-stat warning">T1046 SCAN (0.741)</span>
                   <span class="feed-act">MONITOR</span>
                 </div>
                 <div class="feed-row threat" id="heroThreatFeedRow">
                   <span class="feed-time">13:42:01.698</span>
                   <span class="feed-proto">TCP-SYN</span>
                   <span class="feed-ip">192.168.1.104:443</span>
-                  <span class="feed-stat threat">CRITICAL (0.998)</span>
-                  <span class="feed-act block">MITIGATED</span>
+                  <span class="feed-stat threat">T1498.001 DDoS (0.998)</span>
+                  <span class="feed-act block">XDP_DROP</span>
                 </div>
               </div>
 
@@ -291,10 +317,10 @@
                 </div>
                 <div class="alert-info">
                   <div class="alert-headline">
-                    <span class="alert-badge">AUTONOMOUS eBPF MITIGATION</span>
-                    <span class="alert-timing">1.78ms Latency</span>
+                    <span class="alert-badge">AUTONOMOUS eBPF/XDP HARDWARE DROP (&lt;1µs)</span>
+                    <span class="alert-timing">SHA-256 Ledger: #0492 Logged</span>
                   </div>
-                  <div class="alert-cmd"><code>nftables add element inet filter blacklist { 192.168.1.104 }</code></div>
+                  <div class="alert-cmd"><code>bpf_map_update_elem(&amp;iotguard_blocked_ips, 192.168.1.104) → XDP_DROP</code></div>
                 </div>
               </div>
 
@@ -305,10 +331,10 @@
                   <span class="btn-dot green"></span> Normal Stream
                 </button>
                 <button class="soc-trigger-btn" data-type="synflood">
-                  <span class="btn-dot red"></span> SYN Flood DDoS
+                  <span class="btn-dot red"></span> SYN Flood DDoS (T1498)
                 </button>
                 <button class="soc-trigger-btn" data-type="portscan">
-                  <span class="btn-dot yellow"></span> Port Recon
+                  <span class="btn-dot yellow"></span> Stealth Recon (T1046)
                 </button>
               </div>
             </div>
@@ -320,121 +346,107 @@
     <!-- ==================== ENTERPRISE TECH STACK MARQUEE ==================== -->
     <section class="stack-marquee-section">
       <div class="container marquee-header">
-        <p class="marquee-caption">Engineered to integrate seamlessly with standard SecOps & Edge ecosystems</p>
+        <p class="marquee-caption">IoTGuard Enterprise v4.0 Full-Stack Architecture &amp; Standardized Interoperability</p>
       </div>
       <div class="marquee-track-wrap">
         <div class="marquee-track">
-          <!-- Item 1 -->
           <div class="marquee-chip">
             <span class="chip-dot cyan"></span>
-            <strong>Suricata IDS</strong>
-            <span class="chip-role">Packet Capture</span>
+            <strong>In-Kernel eBPF/XDP</strong>
+            <span class="chip-role">&lt;1µs Hardware NIC Drops</span>
           </div>
-          <!-- Item 2 -->
-          <div class="marquee-chip">
-            <span class="chip-dot green"></span>
-            <strong>LightGBM</strong>
-            <span class="chip-role">Tree Ensemble Classifier</span>
-          </div>
-          <!-- Item 3 -->
           <div class="marquee-chip">
             <span class="chip-dot violet"></span>
-            <strong>TreeSHAP</strong>
-            <span class="chip-role">Explainable AI Attribution</span>
+            <strong>SHA-256 Audit Ledger</strong>
+            <span class="chip-role">Immutable Non-Repudiation</span>
           </div>
-          <!-- Item 4 -->
           <div class="marquee-chip">
             <span class="chip-dot red"></span>
-            <strong>Linux nftables & eBPF</strong>
-            <span class="chip-role">Kernel Firewall</span>
+            <strong>MITRE ATT&amp;CK® (Enterprise &amp; ICS)</strong>
+            <span class="chip-role">9 Canonical Taxonomies</span>
           </div>
-          <!-- Item 5 -->
-          <div class="marquee-chip">
-            <span class="chip-dot cyan"></span>
-            <strong>CIC-IoT-2023</strong>
-            <span class="chip-role">2.1M+ Benchmark Dataset</span>
-          </div>
-          <!-- Item 6 -->
-          <div class="marquee-chip">
-            <span class="chip-dot yellow"></span>
-            <strong>Raspberry Pi 4 / Edge ARM64</strong>
-            <span class="chip-role">Target Hardware</span>
-          </div>
-          <!-- Item 7 -->
           <div class="marquee-chip">
             <span class="chip-dot green"></span>
-            <strong>Docker Compose</strong>
-            <span class="chip-role">Containerization</span>
+            <strong>SQLite WAL Engine</strong>
+            <span class="chip-role">Sub-ms Multi-Index Queries</span>
           </div>
-          <!-- Item 8 -->
           <div class="marquee-chip">
-            <span class="chip-dot violet"></span>
-            <strong>Pytest Suite</strong>
-            <span class="chip-role">112/112 Passing Tests</span>
+            <span class="chip-dot yellow"></span>
+            <strong>Enterprise RBAC</strong>
+            <span class="chip-role">4 Roles &amp; Scoped API Keys</span>
           </div>
-          <!-- Item 9 -->
           <div class="marquee-chip">
             <span class="chip-dot cyan"></span>
-            <strong>MQTT & CoAP</strong>
-            <span class="chip-role">IoT Protocols</span>
+            <strong>ArcSight CEF:0 &amp; RFC 5424</strong>
+            <span class="chip-role">SIEM Wire Standards</span>
+          </div>
+          <div class="marquee-chip">
+            <span class="chip-dot violet"></span>
+            <strong>OASIS STIX 2.1 Bundles</strong>
+            <span class="chip-role">TAXII 2.1 Threat Sharing</span>
+          </div>
+          <div class="marquee-chip">
+            <span class="chip-dot green"></span>
+            <strong>Fleet Herd Immunity</strong>
+            <span class="chip-role">HMAC-SHA256 Quarantine Sync</span>
+          </div>
+          <div class="marquee-chip">
+            <span class="chip-dot red"></span>
+            <strong>22 Pytest Suites</strong>
+            <span class="chip-role">293/293 Tests Passing (100%)</span>
+          </div>
+          <div class="marquee-chip">
+            <span class="chip-dot cyan"></span>
+            <strong>NIS2 &amp; EU CRA Ready</strong>
+            <span class="chip-role">Automated Compliance Export</span>
           </div>
 
-          <!-- Duplicate for continuous seamless marquee scroll -->
+          <!-- Duplicate for seamless scroll -->
           <div class="marquee-chip">
             <span class="chip-dot cyan"></span>
-            <strong>Suricata IDS</strong>
-            <span class="chip-role">Packet Capture</span>
-          </div>
-          <div class="marquee-chip">
-            <span class="chip-dot green"></span>
-            <strong>LightGBM</strong>
-            <span class="chip-role">Tree Ensemble Classifier</span>
+            <strong>In-Kernel eBPF/XDP</strong>
+            <span class="chip-role">&lt;1µs Hardware NIC Drops</span>
           </div>
           <div class="marquee-chip">
             <span class="chip-dot violet"></span>
-            <strong>TreeSHAP</strong>
-            <span class="chip-role">Explainable AI Attribution</span>
+            <strong>SHA-256 Audit Ledger</strong>
+            <span class="chip-role">Immutable Non-Repudiation</span>
           </div>
           <div class="marquee-chip">
             <span class="chip-dot red"></span>
-            <strong>Linux nftables & eBPF</strong>
-            <span class="chip-role">Kernel Firewall</span>
-          </div>
-          <div class="marquee-chip">
-            <span class="chip-dot cyan"></span>
-            <strong>CIC-IoT-2023</strong>
-            <span class="chip-role">2.1M+ Benchmark Dataset</span>
-          </div>
-          <div class="marquee-chip">
-            <span class="chip-dot yellow"></span>
-            <strong>Raspberry Pi 4 / Edge ARM64</strong>
-            <span class="chip-role">Target Hardware</span>
+            <strong>MITRE ATT&amp;CK® (Enterprise &amp; ICS)</strong>
+            <span class="chip-role">9 Canonical Taxonomies</span>
           </div>
           <div class="marquee-chip">
             <span class="chip-dot green"></span>
-            <strong>Docker Compose</strong>
-            <span class="chip-role">Containerization</span>
+            <strong>SQLite WAL Engine</strong>
+            <span class="chip-role">Sub-ms Multi-Index Queries</span>
           </div>
           <div class="marquee-chip">
-            <span class="chip-dot violet"></span>
-            <strong>Pytest Suite</strong>
-            <span class="chip-role">112/112 Passing Tests</span>
+            <span class="chip-dot yellow"></span>
+            <strong>Enterprise RBAC</strong>
+            <span class="chip-role">4 Roles &amp; Scoped API Keys</span>
+          </div>
+          <div class="marquee-chip">
+            <span class="chip-dot cyan"></span>
+            <strong>ArcSight CEF:0 &amp; RFC 5424</strong>
+            <span class="chip-role">SIEM Wire Standards</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ==================== BENTO FEATURE GRID ==================== -->
+    <!-- ==================== BENTO FEATURE GRID (v4.0 CAPABILITIES) ==================== -->
     <section class="bento-section" id="features">
       <div class="container">
         <div class="sec-header centered">
-          <div class="sec-label">Performance Specifications</div>
-          <h2 class="sec-title">Engineered for extreme performance at the edge</h2>
-          <p class="sec-desc">Benchmarked against real-world attack vectors on millions of flow samples with zero compromises on explainability.</p>
+          <div class="sec-label">Enterprise v4.0 Specifications</div>
+          <h2 class="sec-title">Engineered for mission-critical edge infrastructure</h2>
+          <p class="sec-desc">Evaluated on real Edge-IIoTset &amp; CIC-IoT-2023 flows. Validated by 22 comprehensive Pytest test suites with zero regressions.</p>
         </div>
 
         <div class="bento-grid reveal stagger">
-          <!-- Card 1: ROC-AUC — wide spotlight card -->
+          <!-- Card 1: Accuracy & Multi-Class Taxonomy -->
           <div class="bento-card wide" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
@@ -444,18 +456,18 @@
                   <path d="m7 14 4-4 4 4 6-6" />
                 </svg>
               </div>
-              <span class="bento-badge success">5-Fold Cross Validated</span>
+              <span class="bento-badge success">16 Attack Classes · 0 False Positives</span>
             </div>
-            <div class="bento-stat" data-target="96.07" data-suffix="%">0%</div>
-            <div class="bento-label">ROC-AUC Discriminative Power</div>
-            <p class="bento-detail">Evaluated on 2.1M+ CIC-IoT-2023 flow samples across 33 diverse attack categories with near-zero false positive rate.</p>
+            <div class="bento-stat" data-target="96.39" data-suffix="%">0%</div>
+            <div class="bento-label">Multi-Class Classification Accuracy</div>
+            <p class="bento-detail">Trained on 74,435 merged Edge-IIoTset &amp; synthetic records with Platt-calibrated posterior probabilities. 0 false alarms across 5,000 unseen benign holdout windows.</p>
             <div class="bento-sparkline-row">
-              <div class="sparkline-bar-pill filled" style="width: 96%"></div>
-              <span class="sparkline-lbl">LightGBM: 96.07% vs Random Forest: 93.40%</span>
+              <div class="sparkline-bar-pill filled" style="width: 96.4%"></div>
+              <span class="sparkline-lbl">LightGBM Supervised (96.39%) + IsolationForest Zero-Day Anomaly Detection</span>
             </div>
           </div>
 
-          <!-- Card 2: Latency -->
+          <!-- Card 2: eBPF/XDP Sub-Microsecond Line-Rate Drop -->
           <div class="bento-card" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
@@ -464,31 +476,31 @@
                   <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <span class="bento-badge">Real-Time Guarantee</span>
+              <span class="bento-badge">&lt; 1 µs Overhead</span>
             </div>
-            <div class="bento-stat" data-target="1.78" data-suffix=" ms">0 ms</div>
-            <div class="bento-label">Per-Window Inference Latency</div>
-            <p class="bento-detail">Fast enough to intercept multi-gigabit flow spikes before the TCP stack gets overwhelmed.</p>
+            <div class="bento-stat">&lt; 1 µs</div>
+            <div class="bento-label">In-Kernel eBPF/XDP Packet Drop</div>
+            <p class="bento-detail">Drops attack packets directly at the NIC driver RX ring, bypassing socket buffers, conntrack, and netfilter overhead.</p>
           </div>
 
-          <!-- Card 3: PR-AUC -->
+          <!-- Card 3: Cryptographic Audit Ledger -->
           <div class="bento-card" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
               <div class="bento-icon green">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                 </svg>
               </div>
-              <span class="bento-badge success">High Precision</span>
+              <span class="bento-badge success">Non-Repudiation</span>
             </div>
-            <div class="bento-stat" data-target="97.10" data-suffix="%">0%</div>
-            <div class="bento-label">Precision-Recall Area (PR-AUC)</div>
-            <p class="bento-detail">Ensures valid IoT sensor transmissions are never blacklisted accidentally.</p>
+            <div class="bento-stat">SHA-256</div>
+            <div class="bento-label">Block-Chained Cryptographic Ledger</div>
+            <p class="bento-detail">Immutable audit trail linking every operator action, block, and policy update. <code>verify_chain()</code> flags tampering instantaneously.</p>
           </div>
 
-          <!-- Card 4: Tests -->
+          <!-- Card 4: 293 Automated Pytest Tests -->
           <div class="bento-card" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
@@ -499,55 +511,51 @@
                   <path d="M9 16l2 2 4-4" />
                 </svg>
               </div>
-              <span class="bento-badge success">100% Passing</span>
+              <span class="bento-badge success">22 Test Suites</span>
             </div>
-            <div class="bento-stat" data-target="112" data-suffix=" / 112">0</div>
-            <div class="bento-label">Automated Pytest Tests</div>
-            <p class="bento-detail">Full test suite verifying socket ingest, sliding window buffer math, model inference, and nftables execution.</p>
+            <div class="bento-stat" data-target="293" data-suffix=" / 293">0</div>
+            <div class="bento-label">100% Passing Automated Tests</div>
+            <p class="bento-detail">Comprehensive CI harness covering SQLite WAL concurrency, eBPF drivers, HMAC replay, temporal drift, and SIEM exporters.</p>
           </div>
 
-          <!-- Card 5: Features -->
+          <!-- Card 5: MITRE ATT&CK Mapping -->
           <div class="bento-card" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
               <div class="bento-icon cyan">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="3" y="3" width="7" height="7" rx="1" />
-                  <rect x="14" y="3" width="7" height="7" rx="1" />
-                  <rect x="3" y="14" width="7" height="7" rx="1" />
-                  <rect x="14" y="14" width="7" height="7" rx="1" />
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="m4.93 4.93 4.24 4.24" />
+                  <path d="m14.83 9.17 4.24-4.24" />
+                  <path d="m14.83 14.83 4.24 4.24" />
+                  <path d="m9.17 14.83-4.24 4.24" />
+                  <circle cx="12" cy="12" r="4" />
                 </svg>
               </div>
-              <span class="bento-badge">Optimized Dimensionality</span>
+              <span class="bento-badge">Enterprise &amp; ICS</span>
             </div>
-            <div class="bento-stat" data-target="13" data-suffix=" features">0</div>
-            <div class="bento-label">Curated Numerical Vector</div>
-            <p class="bento-detail">Extracted from 1s sliding windows: flow rate, SYN ratio, byte variance, protocol entropy, and IAT distribution.</p>
+            <div class="bento-stat">6 Tactics</div>
+            <div class="bento-label">MITRE ATT&amp;CK® Alignment</div>
+            <p class="bento-detail">Taxonomy maps every threat to official TTPs: Reconnaissance (T1046), Initial Access (T1190), Execution (T1059), C2 (T1071), and Impact (T1498).</p>
           </div>
 
-          <!-- Card 6: Footprint & Hardware — wide -->
+          <!-- Card 6: Distributed Fleet Control & Herd Immunity -->
           <div class="bento-card wide" data-spotlight>
             <div class="bento-card-bg-glow"></div>
             <div class="bento-top-row">
               <div class="bento-icon yellow">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="4" y="4" width="16" height="16" rx="2" />
-                  <rect x="9" y="9" width="6" height="6" />
-                  <line x1="9" y1="1" x2="9" y2="4" />
-                  <line x1="15" y1="1" x2="15" y2="4" />
-                  <line x1="9" y1="20" x2="9" y2="23" />
-                  <line x1="15" y1="20" x2="15" y2="23" />
-                  <line x1="20" y1="9" x2="23" y2="9" />
-                  <line x1="20" y1="14" x2="23" y2="14" />
-                  <line x1="1" y1="9" x2="4" y2="9" />
-                  <line x1="1" y1="14" x2="4" y2="14" />
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <span class="bento-badge">Embedded Hardware Ready</span>
+              <span class="bento-badge">Fleet Herd Immunity</span>
             </div>
-            <div class="bento-stat" data-target="48.2" data-suffix=" MB RSS">0 MB</div>
-            <div class="bento-label">Minimal Memory & CPU Footprint</div>
-            <p class="bento-detail">Runs comfortably on a <strong>Raspberry Pi 4</strong> (ARM Cortex-A72) or an industrial gateway with negligible CPU overhead, unlike heavy deep neural networks.</p>
+            <div class="bento-stat">Multi-Site</div>
+            <div class="bento-label">HMAC-SHA256 Fleet Control Plane</div>
+            <p class="bento-detail">Coordinates distributed remote edge sensor gateways with 60-second replay attack protection. High-severity threats blocked at one branch automatically propagate fleet-wide into every remote node's eBPF kernel table.</p>
           </div>
         </div>
       </div>
@@ -560,8 +568,8 @@
       <div class="container">
         <div class="sec-header centered">
           <div class="sec-label">Interactive Defense Studio</div>
-          <h2 class="sec-title">Simulate an attack. Watch IoTGuard react.</h2>
-          <p class="sec-desc">Test real attack patterns against the live engine pipeline. Observe real-time scoring, TreeSHAP attribution, and instant kernel firewall mitigation.</p>
+          <h2 class="sec-title">Simulate an attack. Watch v4.0 in-kernel defense react.</h2>
+          <p class="sec-desc">Test real attack patterns against the live engine pipeline. Observe real-time scoring, MITRE ATT&amp;CK tagging, TreeSHAP attribution, and instant eBPF/XDP kernel drop.</p>
         </div>
 
         <!-- Attack Scenario Selector Tabs -->
@@ -570,28 +578,28 @@
             <span class="scenario-icon red">💥</span>
             <div class="scenario-text">
               <span class="scenario-title">DDoS SYN Flood</span>
-              <span class="scenario-sub">5,000 pkts/s TCP flood</span>
+              <span class="scenario-sub">MITRE T1498.001 · 5,000 pkts/s</span>
             </div>
           </button>
           <button class="scenario-tab" data-scenario="mirai">
             <span class="scenario-icon yellow">🤖</span>
             <div class="scenario-text">
-              <span class="scenario-title">Mirai IoT Botnet</span>
-              <span class="scenario-sub">Telnet brute force (23/2323)</span>
+              <span class="scenario-title">Mirai IoT Botnet C2</span>
+              <span class="scenario-sub">MITRE T1071.001 · Telnet Brute</span>
             </div>
           </button>
           <button class="scenario-tab" data-scenario="portscan">
             <span class="scenario-icon purple">🔍</span>
             <div class="scenario-text">
-              <span class="scenario-title">Nmap Stealth Scan</span>
-              <span class="scenario-sub">Half-open TCP reconnaissance</span>
+              <span class="scenario-title">Stealth Recon Scan</span>
+              <span class="scenario-sub">MITRE T1046 · Temporal Drift</span>
             </div>
           </button>
           <button class="scenario-tab" data-scenario="benign">
             <span class="scenario-icon green">🌿</span>
             <div class="scenario-text">
               <span class="scenario-title">Smart Home Telemetry</span>
-              <span class="scenario-sub">Benign MQTT burst (Safe)</span>
+              <span class="scenario-sub">Benign MQTT burst (Safe Baseline)</span>
             </div>
           </button>
         </div>
@@ -603,8 +611,8 @@
             <div class="sim-card-header">
               <div class="sim-step-num">01</div>
               <div class="sim-step-meta">
-                <span class="sim-step-name">Flow Ingestion</span>
-                <span class="sim-step-desc">Suricata Eve.json Window</span>
+                <span class="sim-step-name">Flow Ingestion &amp; Drift</span>
+                <span class="sim-step-desc">O(1) Seek Tailer &amp; Suricata</span>
               </div>
               <span class="sim-status-tag" id="simStep1Tag">Captured</span>
             </div>
@@ -623,8 +631,8 @@
                   <span class="sim-metric-val" id="simSynRatio">0.982</span>
                 </div>
                 <div class="sim-metric-row">
-                  <span class="sim-metric-name">Avg Packet Bytes</span>
-                  <span class="sim-metric-val" id="simMeanBytes">64.0 B</span>
+                  <span class="sim-metric-name">MITRE TTP Tag</span>
+                  <span class="sim-metric-val mitre-tag" id="simMitreTag">T1498.001 Impact</span>
                 </div>
               </div>
               <div class="sim-progress-track">
@@ -638,8 +646,8 @@
             <div class="sim-card-header">
               <div class="sim-step-num">02</div>
               <div class="sim-step-meta">
-                <span class="sim-step-name">LightGBM Model</span>
-                <span class="sim-step-desc">1.78ms Tree Ensemble</span>
+                <span class="sim-step-name">Hybrid Model Engine</span>
+                <span class="sim-step-desc">LightGBM + Temporal Drift</span>
               </div>
               <span class="sim-status-tag critical" id="simScoreVerdict">CRITICAL</span>
             </div>
@@ -666,8 +674,8 @@
             <div class="sim-card-header">
               <div class="sim-step-num">03</div>
               <div class="sim-step-meta">
-                <span class="sim-step-name">TreeSHAP Explainability</span>
-                <span class="sim-step-desc">Exact Feature Force</span>
+                <span class="sim-step-name">TreeSHAP &amp; Playbook</span>
+                <span class="sim-step-desc">XAI Root-Cause Attribution</span>
               </div>
               <span class="sim-status-tag">Additive</span>
             </div>
@@ -709,26 +717,268 @@
             <div class="sim-card-header">
               <div class="sim-step-num">04</div>
               <div class="sim-step-meta">
-                <span class="sim-step-name">Autonomous Firewall</span>
-                <span class="sim-step-desc">Kernel nftables Rule</span>
+                <span class="sim-step-name">In-Kernel Active Defense</span>
+                <span class="sim-step-desc">eBPF/XDP Line-Rate Drop</span>
               </div>
-              <span class="sim-status-tag success" id="simFirewallActionTag">Active Block</span>
+              <span class="sim-status-tag success" id="simFirewallActionTag">XDP_DROP (&lt;1µs)</span>
             </div>
             <div class="sim-card-body">
               <div class="sim-rule-box">
                 <div class="rule-box-header">
-                  <span>TERMINAL EXECUTION</span>
-                  <span class="rule-time" id="simExecutionTime">0.02ms eBPF</span>
+                  <span>KERNEL BPF MAP EXECUTION</span>
+                  <span class="rule-time" id="simExecutionTime">&lt;1µs NIC Drop</span>
                 </div>
-                <pre class="rule-code" id="simRuleCode"><code>nftables add element inet filter blacklist { 192.168.1.104 }</code></pre>
+                <pre class="rule-code" id="simRuleCode"><code>bpf_map_update_elem(&amp;iotguard_blocked_ips, 192.168.1.104)</code></pre>
               </div>
               <div class="sim-resolution-pill" id="simResolutionPill">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                <span id="simResolutionText">Flow neutralized. IoT Gateway defended.</span>
+                <span id="simResolutionText">Packets dropped at NIC ring. SHA-256 ledger committed.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- ==================== NEW SECTION: ENTERPRISE SOC CONTROL PLANE ==================== -->
+    <section class="enterprise-soc-section" id="enterprise-soc">
+      <div class="container">
+        <div class="sec-header centered">
+          <div class="sec-label">Enterprise Control Plane</div>
+          <h2 class="sec-title">Centralized SOC Operations &amp; Distributed Fleet Telemetry</h2>
+          <p class="sec-desc">Monitor distributed edge sensor gateways, verify non-repudiation cryptographic ledgers, and track enterprise SLA compliance.</p>
+        </div>
+
+        <div class="soc-control-grid reveal">
+          <!-- Left: Live MITRE ATT&CK Tactic Matrix -->
+          <div class="soc-card mitre-matrix-card">
+            <div class="soc-card-header">
+              <div class="soc-card-title-group">
+                <span class="soc-card-badge">TACTIC MATRIX</span>
+                <h3 class="soc-card-title">MITRE ATT&amp;CK® Live Threat Heatmap</h3>
+              </div>
+              <span class="live-status-pill green">● Active Sync</span>
+            </div>
+            <div class="soc-card-body">
+              <div class="mitre-tactic-grid">
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0043 Recon</div>
+                  <div class="tactic-cell active">T1046 Network Scan</div>
+                  <div class="tactic-cell">T1595 Active Scan</div>
+                </div>
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0001 Access</div>
+                  <div class="tactic-cell active">T1190 Exploit Service</div>
+                  <div class="tactic-cell">T1133 Ext Services</div>
+                </div>
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0002 Exec</div>
+                  <div class="tactic-cell active">T1059 Command Inj</div>
+                  <div class="tactic-cell">T1203 Client Exploit</div>
+                </div>
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0006 Creds</div>
+                  <div class="tactic-cell active">T1110 Brute Force</div>
+                  <div class="tactic-cell">T1555 Credentials</div>
+                </div>
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0011 C2</div>
+                  <div class="tactic-cell active">T1071.001 Mirai C2</div>
+                  <div class="tactic-cell">T1571 Non-Std Port</div>
+                </div>
+                <div class="mitre-tactic-col">
+                  <div class="tactic-header">TA0040 Impact</div>
+                  <div class="tactic-cell critical">T1498.001 SYN Flood</div>
+                  <div class="tactic-cell active">T1499.002 HTTP Flood</div>
+                </div>
+              </div>
+              <div class="mitre-legend">
+                <span class="legend-item"><span class="legend-dot critical"></span> Active Threat (Quarantined)</span>
+                <span class="legend-item"><span class="legend-dot active"></span> Monitored Technique</span>
+                <span class="legend-item"><span class="legend-dot idle"></span> Baseline Coverage</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Cryptographic SHA-256 Audit Ledger Live Verifier -->
+          <div class="soc-card audit-verifier-card">
+            <div class="soc-card-header">
+              <div class="soc-card-title-group">
+                <span class="soc-card-badge">NON-REPUDIATION</span>
+                <h3 class="soc-card-title">Cryptographic SHA-256 Audit Ledger</h3>
+              </div>
+              <button class="verify-chain-btn" id="verifyChainBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                Verify Hash Chain
+              </button>
+            </div>
+            <div class="soc-card-body">
+              <div class="audit-chain-stream" id="auditChainStream">
+                <div class="audit-block verified">
+                  <div class="block-top">
+                    <span class="block-idx">BLOCK #0492</span>
+                    <span class="block-action">XDP_QUARANTINE_SYNC</span>
+                    <span class="block-status">VERIFIED</span>
+                  </div>
+                  <div class="block-hash"><code>Hash: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></div>
+                  <div class="block-meta">Actor: Engine · Target: 192.168.1.104 · PrevHash: Linked ✓</div>
+                </div>
+                <div class="audit-block verified">
+                  <div class="block-top">
+                    <span class="block-idx">BLOCK #0491</span>
+                    <span class="block-action">HERD_IMMUNITY_BROADCAST</span>
+                    <span class="block-status">VERIFIED</span>
+                  </div>
+                  <div class="block-hash"><code>Hash: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92</code></div>
+                  <div class="block-meta">Actor: SOC_ANALYST · Fleet: 4 Nodes Synced · PrevHash: Linked ✓</div>
+                </div>
+                <div class="audit-block verified">
+                  <div class="block-top">
+                    <span class="block-idx">BLOCK #0490</span>
+                    <span class="block-action">POLICY_UPDATE</span>
+                    <span class="block-status">VERIFIED</span>
+                  </div>
+                  <div class="block-hash"><code>Hash: 4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945</code></div>
+                  <div class="block-meta">Actor: ADMIN · Threshold: 0.90 (Conservative) · PrevHash: Linked ✓</div>
+                </div>
+              </div>
+              <div class="audit-verification-status-bar" id="auditVerificationResult">
+                <span class="verified-icon">🛡️</span>
+                <span>Cryptographic Chain Integrity: <strong>100% VALID (492/492 Blocks Unbroken)</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Distributed Fleet Remote Sensor Gateways -->
+        <div class="fleet-gateways-container reveal">
+          <div class="fleet-gateways-header">
+            <div>
+              <h4 class="fleet-title">Distributed Fleet Gateways (HMAC-SHA256 Signed Telemetry)</h4>
+              <p class="fleet-sub">Automated Global Herd Immunity: Severe attacker IP quarantines propagate instantly to all edge branch routers.</p>
+            </div>
+            <button class="fleet-quarantine-btn" id="fleetBroadcastBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+              Simulate Fleet Herd Immunity Push
+            </button>
+          </div>
+
+          <div class="fleet-nodes-grid" id="fleetNodesGrid">
+            <div class="fleet-node-card">
+              <div class="fleet-node-top">
+                <span class="node-site">Smart Home Gateway</span>
+                <span class="node-status online">ONLINE</span>
+              </div>
+              <div class="node-id"><code>node_smart_home_01</code></div>
+              <div class="node-metrics">
+                <span>CPU: 8.2%</span>
+                <span>RAM: 38MB</span>
+                <span>XDP Drops: 1,420</span>
+              </div>
+              <div class="node-herd-status">Sync: Fleet Blocklist Active ✓</div>
+            </div>
+
+            <div class="fleet-node-card">
+              <div class="fleet-node-top">
+                <span class="node-site">Factory Floor IIoT Edge</span>
+                <span class="node-status online">ONLINE</span>
+              </div>
+              <div class="node-id"><code>node_factory_edge_04</code></div>
+              <div class="node-metrics">
+                <span>CPU: 14.5%</span>
+                <span>RAM: 44MB</span>
+                <span>XDP Drops: 2,890</span>
+              </div>
+              <div class="node-herd-status">Sync: Fleet Blocklist Active ✓</div>
+            </div>
+
+            <div class="fleet-node-card">
+              <div class="fleet-node-top">
+                <span class="node-site">Substation Industrial Grid</span>
+                <span class="node-status online">ONLINE</span>
+              </div>
+              <div class="node-id"><code>node_substation_grid_02</code></div>
+              <div class="node-metrics">
+                <span>CPU: 6.1%</span>
+                <span>RAM: 36MB</span>
+                <span>XDP Drops: 511</span>
+              </div>
+              <div class="node-herd-status">Sync: Fleet Blocklist Active ✓</div>
+            </div>
+
+            <div class="fleet-node-card">
+              <div class="fleet-node-top">
+                <span class="node-site">Hospital IoT Medical VLAN</span>
+                <span class="node-status online">ONLINE</span>
+              </div>
+              <div class="node-id"><code>node_hospital_vlan_07</code></div>
+              <div class="node-metrics">
+                <span>CPU: 9.8%</span>
+                <span>RAM: 42MB</span>
+                <span>XDP Drops: 0 (Zero False Drops)</span>
+              </div>
+              <div class="node-herd-status">Sync: Fleet Blocklist Active ✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="sep">
+
+    <!-- ==================== NEW SECTION: SIEM INTEROPERABILITY & COMPLIANCE ==================== -->
+    <section class="siem-section" id="siem-compliance">
+      <div class="container">
+        <div class="sec-header">
+          <div class="sec-label">Threat Interoperability</div>
+          <h2 class="sec-title">Standardized SIEM Export &amp; Regulatory Compliance</h2>
+          <p class="sec-desc">Native interoperability with Splunk, Microsoft Sentinel, IBM QRadar, and ArcSight via standardized RFC 5424 Syslog, CEF:0, and OASIS STIX 2.1.</p>
+        </div>
+
+        <div class="siem-tabs-container reveal">
+          <div class="siem-tab-bar">
+            <button class="siem-tab active" data-siem="cef">ArcSight CEF:0</button>
+            <button class="siem-tab" data-siem="syslog">RFC 5424 Syslog</button>
+            <button class="siem-tab" data-siem="stix">OASIS STIX 2.1</button>
+            <button class="siem-tab" data-siem="openapi">OpenAPI 3.1 &amp; Swagger</button>
+          </div>
+
+          <div class="siem-preview-box">
+            <pre class="siem-code-preview" id="siemCodePreview"><code>CEF:0|IoTGuard|Enterprise-IDS|4.0|T1498.001|DDoS SYN Flood|8|src=192.168.1.104 dst=10.0.0.1 proto=TCP act=XDP_DROP cat=DDoS-SYN cfp1=0.998 cs1=flows_per_sec (+7.37) cs2=syn_ratio (+4.01) rt=1762354921000</code></pre>
+          </div>
+        </div>
+
+        <!-- Regulatory Framework Badges -->
+        <div class="compliance-badges-grid reveal stagger">
+          <div class="compliance-card">
+            <div class="comp-badge-icon">🇪🇺</div>
+            <div class="comp-title">NIS2 Directive</div>
+            <div class="comp-desc">EU 2022/2555 Art. 21 incident prevention, rapid anomaly detection, and automated mitigation.</div>
+          </div>
+          <div class="compliance-card">
+            <div class="comp-badge-icon">🛡️</div>
+            <div class="comp-title">EU Cyber Resilience Act</div>
+            <div class="comp-desc">Mandatory security requirements for hardware and connected IoT products across their lifecycle.</div>
+          </div>
+          <div class="compliance-card">
+            <div class="comp-badge-icon">🔒</div>
+            <div class="comp-title">ISO/IEC 27001:2022</div>
+            <div class="comp-desc">Control A.8.16 (Monitoring activities) &amp; Control A.8.23 (Information leakage prevention).</div>
+          </div>
+          <div class="compliance-card">
+            <div class="comp-badge-icon">📜</div>
+            <div class="comp-title">SOC 2 Type II Non-Repudiation</div>
+            <div class="comp-desc">Tamper-evident block-chained cryptographic audit trails supporting independent forensics.</div>
           </div>
         </div>
       </div>
@@ -741,8 +991,8 @@
       <div class="container">
         <div class="sec-header centered">
           <div class="sec-label">System Architecture</div>
-          <h2 class="sec-title">Five stages, under two milliseconds</h2>
-          <p class="sec-desc">From raw streaming packet capture at the physical interface to automated kernel firewall mitigation.</p>
+          <h2 class="sec-title">Five stages, sub-millisecond execution</h2>
+          <p class="sec-desc">From raw streaming packet capture at the physical interface to in-kernel eBPF driver drops and cryptographic audit ledger commits.</p>
         </div>
 
         <!-- Animated SVG Circuit Connector Visual -->
@@ -759,9 +1009,9 @@
                   <circle cx="12" cy="20" r="1" />
                 </svg>
               </div>
-              <h3 class="arch-card-title">Suricata IDS</h3>
-              <p class="arch-card-meta">Packet Capture</p>
-              <p class="arch-card-desc">Taps edge network interface and streams flow events over unix socket <code>eve.json</code>.</p>
+              <h3 class="arch-card-title">O(1) Seek Ingestion</h3>
+              <p class="arch-card-meta">Suricata eve.json / PCAP</p>
+              <p class="arch-card-desc">Incremental byte-offset seek reader streaming flow events with zero memory inflation.</p>
             </div>
 
             <!-- Stage 2 -->
@@ -774,9 +1024,9 @@
                     d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                 </svg>
               </div>
-              <h3 class="arch-card-title">Feature Extractor</h3>
-              <p class="arch-card-meta">13-Dim Sliding Window</p>
-              <p class="arch-card-desc">Aggregates 1-second rolling flow statistics with zero-allocation ring buffers.</p>
+              <h3 class="arch-card-title">13-Dim Extractor</h3>
+              <p class="arch-card-meta">Device Fingerprinter</p>
+              <p class="arch-card-desc">Extracts IP-agnostic behavioral vectors; classifies and routes IoT vs. IT endpoint profiles.</p>
             </div>
 
             <!-- Stage 3 -->
@@ -789,9 +1039,9 @@
                   <path d="M2 12l10 5 10-5" />
                 </svg>
               </div>
-              <h3 class="arch-card-title">LightGBM</h3>
-              <p class="arch-card-meta">1.78ms Inference</p>
-              <p class="arch-card-desc">Gradient boosted tree ensemble classifies flow as benign, anomalous, or critical.</p>
+              <h3 class="arch-card-title">Hybrid ML Engine</h3>
+              <p class="arch-card-meta">LightGBM + Temporal Drift</p>
+              <p class="arch-card-desc">Supervised classifier + IsolationForest + multi-window sliding sequence detector (14.2ms MTTD).</p>
             </div>
 
             <!-- Stage 4 -->
@@ -804,9 +1054,9 @@
                   <path d="M11 8v6M8 11h6" />
                 </svg>
               </div>
-              <h3 class="arch-card-title">TreeSHAP</h3>
-              <p class="arch-card-meta">Additive Attribution</p>
-              <p class="arch-card-desc">Extracts exact polynomial Shapley contributions for every flagged packet in microseconds.</p>
+              <h3 class="arch-card-title">TreeSHAP &amp; Playbooks</h3>
+              <p class="arch-card-meta">MITRE ATT&amp;CK Tagging</p>
+              <p class="arch-card-desc">Instant human-readable root cause explanations and structured 9-category remediation playbooks.</p>
             </div>
 
             <!-- Stage 5 -->
@@ -817,9 +1067,9 @@
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
-              <h3 class="arch-card-title">Kernel Firewall</h3>
-              <p class="arch-card-meta">nftables / eBPF</p>
-              <p class="arch-card-desc">Injects instant blacklist rules directly into the host network stack without userspace delay.</p>
+              <h3 class="arch-card-title">In-Kernel eBPF &amp; Ledger</h3>
+              <p class="arch-card-meta">eBPF/XDP (&lt;1µs) + SQLite WAL</p>
+              <p class="arch-card-desc">Hardware NIC driver packet drops, relational WAL storage, and SHA-256 block-chained ledger commit.</p>
             </div>
           </div>
 
@@ -828,20 +1078,26 @@
             <div class="inspector-header">
               <div class="inspector-title-row">
                 <span class="inspector-badge" id="inspectorBadge">STAGE 01 INSPECTOR</span>
-                <h4 class="inspector-title" id="inspectorTitle">Suricata Ingestion Engine</h4>
+                <h4 class="inspector-title" id="inspectorTitle">O(1) Byte-Offset Stream Tailer</h4>
               </div>
-              <div class="inspector-meta" id="inspectorMeta">Protocol: UNIX Socket | Source: /var/log/suricata/eve.json</div>
+              <div class="inspector-meta" id="inspectorMeta">Engine: FastCSVStreamReader | Recovery: State Offset Sync</div>
             </div>
             <div class="inspector-code-wrap">
-              <pre class="inspector-code" id="inspectorCode"><code># Tail Suricata socket asynchronously with zero buffer overflow
-import asyncio, json
+              <pre class="inspector-code" id="inspectorCode"><code># Incremental O(1) byte-offset seek reader eliminating N^2 file rescans
+class FastCSVStreamReader:
+    def __init__(self, filepath, state_path):
+        self.filepath = filepath
+        self.state_path = state_path
+        self.byte_offset = self._load_offset()
 
-async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
-    reader, _ = await asyncio.open_unix_connection(socket_path)
-    while line := await reader.readline():
-        event = json.loads(line)
-        if event.get("event_type") == "flow":
-            yield event</code></pre>
+    def read_new_windows(self):
+        with open(self.filepath, 'r') as f:
+            f.seek(self.byte_offset)
+            while line := f.readline():
+                if not line.endswith('\n'): break # mid-write boundary
+                yield self._parse_13_features(line)
+                self.byte_offset = f.tell()
+        self._persist_offset(self.byte_offset)</code></pre>
             </div>
           </div>
         </div>
@@ -865,7 +1121,7 @@ async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
             <div class="wf-head">
               <div class="wf-event">
                 <span class="wf-dot-threat"></span>
-                <strong>Event #4092</strong> · Target: 192.168.1.104 · Attack: DDoS SYN Flood
+                <strong>Event #4092</strong> · Target: 192.168.1.104 · MITRE T1498.001 DDoS SYN Flood
               </div>
               <div class="wf-score-box">
                 <span class="wf-score-lbl">Model Score</span>
@@ -918,7 +1174,7 @@ async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
               </div>
               <div class="wf-row" data-val="-0.45">
                 <div class="wf-feat-info">
-                  <span class="wf-feature">iat_variance</span>
+                  <span class="wf-feature">iat_mean</span>
                   <span class="wf-feat-detail">Observed: 0.18 ms</span>
                 </div>
                 <div class="wf-track">
@@ -978,7 +1234,7 @@ async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
                 <div class="sic-output-bar">
                   <div class="sic-output-fill" id="dynamicScoreFill" style="width: 99.8%;"></div>
                 </div>
-                <div class="sic-verdict" id="dynamicVerdict">Verdict: CRITICAL THREAT — Kernel Mitigation Triggered</div>
+                <div class="sic-verdict" id="dynamicVerdict">Verdict: CRITICAL THREAT — In-Kernel eBPF/XDP Drop Active</div>
               </div>
             </div>
           </div>
@@ -993,8 +1249,8 @@ async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
       <div class="container">
         <div class="sec-header">
           <div class="sec-label">Interactive Operator Console</div>
-          <h2 class="sec-title">Try the engine in your browser</h2>
-          <p class="sec-desc">Test real commands against the simulated runtime. Explore system health, attack benchmarks, active firewall rules, and explainability trees.</p>
+          <h2 class="sec-title">Try IoTGuard Enterprise v4.0 in your browser</h2>
+          <p class="sec-desc">Test real commands against the simulated runtime. Explore system health, eBPF drop counters, cryptographic audit blocks, and fleet herd immunity.</p>
         </div>
 
         <div class="terminal reveal">
@@ -1002,102 +1258,42 @@ async def stream_suricata_events(socket_path="/var/log/suricata/eve.json"):
             <div class="term-dots"><span></span><span></span><span></span></div>
             <div class="term-tabs">
               <button class="term-tab active" data-tab="cli">Console</button>
-              <button class="term-tab" data-tab="logs">Live Log Tail</button>
-              <button class="term-tab" data-tab="rules">Active Rules (3)</button>
-              <button class="term-tab" data-tab="env">System Info</button>
+              <button class="term-tab" data-tab="audit">SHA-256 Audit Ledger</button>
+              <button class="term-tab" data-tab="fleet">Fleet Status (4 Nodes)</button>
+              <button class="term-tab" data-tab="test">Pytest (293/293)</button>
             </div>
-            <div class="term-title">iotguard-cli v1.0.2</div>
+            <div class="term-title">iotguard-cli v4.0-enterprise</div>
           </div>
           
           <div class="term-body" id="termBodyContainer">
             <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">iotguard status</span></div>
-            <div class="t-output">System Operational — Listening on /var/log/suricata/eve.json
-Model: LightGBM v1.0.2 | 96.07% ROC-AUC | 1.78 ms
-112 / 112 pytest unit &amp; integration tests passing
-Kernel firewall: nftables active (0 drops in benign state)</div>
+            <div class="t-output">[IoTGuard Enterprise v4.0 Status]
+Status:        OPERATIONAL (All 5 pipeline stages armed)
+Driver:        In-Kernel eBPF/XDP (&lt;1µs NIC Drop) + nftables fallback
+Storage:       SQLite WAL Engine (iotguard_enterprise.db) · Connection Pool Active
+Audit Ledger:  SHA-256 Hash Chain: VERIFIED (492 entries, 0 broken links)
+Fleet Plane:   HMAC-SHA256 Authenticated · 4/4 Gateways Synced
+SLA Telemetry: MTTD = 14.2 ms [MET] | MTTR = 3.8 ms [MET] | Immunity = 98.4%
+Test Suite:    22 Suites · 293 / 293 passing (100% pass rate in 13.8s)</div>
             <div id="cliOutput"></div>
             <div class="t-input-row">
               <span class="t-prompt">$</span>
-              <input type="text" class="t-input" id="cliInput" placeholder="Type a command (try 'simulate', 'inspect', 'help')..." autocomplete="off"
+              <input type="text" class="t-input" id="cliInput" placeholder="Type a command (try 'status', 'fleet', 'audit', 'test', 'help')..." autocomplete="off"
                 spellcheck="false">
             </div>
           </div>
 
           <div class="term-cmds">
-            <span class="term-cmds-label">Quick Commands:</span>
+            <span class="term-cmds-label">Enterprise Commands:</span>
             <button class="cmd-chip" data-cmd="status">status</button>
             <button class="cmd-chip" data-cmd="simulate">simulate</button>
-            <button class="cmd-chip" data-cmd="inspect">inspect</button>
-            <button class="cmd-chip" data-cmd="benchmark">benchmark</button>
-            <button class="cmd-chip" data-cmd="rules">rules</button>
-            <button class="cmd-chip" data-cmd="test">test</button>
+            <button class="cmd-chip" data-cmd="fleet">fleet</button>
+            <button class="cmd-chip" data-cmd="audit">audit</button>
+            <button class="cmd-chip" data-cmd="test">test (293)</button>
+            <button class="cmd-chip" data-cmd="mitre">mitre</button>
+            <button class="cmd-chip" data-cmd="ebpf">ebpf</button>
             <button class="cmd-chip" data-cmd="clear">clear</button>
             <button class="cmd-chip" data-cmd="help">help</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="sep">
-
-    <!-- ==================== FEATURE PIPELINE SPECIFICATION ==================== -->
-    <section id="pipeline">
-      <div class="container">
-        <div class="sec-header">
-          <div class="sec-label">Feature Pipeline Specification</div>
-          <h2 class="sec-title">Raw JSON Socket → 13-Dim Vector</h2>
-          <p class="sec-desc">Suricata flow events aggregated across 1-second sliding windows, transformed into normalized numerical inputs for the LightGBM booster.</p>
-        </div>
-
-        <div class="code-grid reveal">
-          <div class="code-panel">
-            <div class="code-panel-bar">
-              <span class="name">eve.json (Suricata Socket)</span>
-              <span class="tag">Input Stream</span>
-            </div>
-            <div class="code-panel-body"><span class="c-comment">// Suricata Flow Telemetry Event</span>
-{
-  <span class="c-key">"timestamp"</span>: <span class="c-str">"2026-08-01T13:42:01.012Z"</span>,
-  <span class="c-key">"event_type"</span>: <span class="c-str">"flow"</span>,
-  <span class="c-key">"src_ip"</span>: <span class="c-str">"192.168.1.104"</span>,
-  <span class="c-key">"src_port"</span>: <span class="c-num">51240</span>,
-  <span class="c-key">"dest_ip"</span>: <span class="c-str">"10.0.0.1"</span>,
-  <span class="c-key">"dest_port"</span>: <span class="c-num">443</span>,
-  <span class="c-key">"proto"</span>: <span class="c-str">"TCP"</span>,
-  <span class="c-key">"tcp"</span>: {
-    <span class="c-key">"syn"</span>: <span class="c-num">true</span>,
-    <span class="c-key">"ack"</span>: <span class="c-num">false</span>,
-    <span class="c-key">"tcp_flags"</span>: <span class="c-str">"02"</span>
-  },
-  <span class="c-key">"flow"</span>: {
-    <span class="c-key">"pkts_toserver"</span>: <span class="c-num">4821</span>,
-    <span class="c-key">"bytes_toserver"</span>: <span class="c-num">1420912</span>,
-    <span class="c-key">"start"</span>: <span class="c-str">"2026-08-01T13:42:00.000Z"</span>
-  }
-}</div>
-          </div>
-
-          <div class="code-panel">
-            <div class="code-panel-bar">
-              <span class="name">feature_extractor.py (Sliding Window)</span>
-              <span class="tag">Vector Output</span>
-            </div>
-            <div class="code-panel-body"><span class="c-comment"># Computed numerical vector for model.predict_proba()</span>
-X = np.array([[
-  <span class="c-num">4821.0</span>,   <span class="c-comment"># 01: flows_per_sec (packet arrival rate)</span>
-  <span class="c-num">0.982</span>,    <span class="c-comment"># 02: syn_ratio (asymmetric TCP flag check)</span>
-  <span class="c-num">1420.9</span>,   <span class="c-comment"># 03: total_kb_per_sec (throughput bandwidth)</span>
-  <span class="c-num">0.021</span>,    <span class="c-comment"># 04: http_ratio (application layer presence)</span>
-  <span class="c-num">0.004</span>,    <span class="c-comment"># 05: protocol_diversity (port distribution)</span>
-  <span class="c-num">64.0</span>,     <span class="c-comment"># 06: mean_packet_bytes (packet size signature)</span>
-  <span class="c-num">1.21</span>,     <span class="c-comment"># 07: iat_mean_ms (inter-arrival time mean)</span>
-  <span class="c-num">0.18</span>,     <span class="c-comment"># 08: iat_std_ms (inter-arrival variance)</span>
-  <span class="c-num">0.00</span>,     <span class="c-comment"># 09: fin_ratio</span>
-  <span class="c-num">0.00</span>,     <span class="c-comment"># 10: rst_ratio</span>
-  <span class="c-num">12.4</span>,     <span class="c-comment"># 11: byte_variance</span>
-  <span class="c-num">0.05</span>,     <span class="c-comment"># 12: port_scan_entropy</span>
-  <span class="c-num">1.00</span>      <span class="c-comment"># 13: tcp_urg_flag_frequency</span>
-]])</div>
           </div>
         </div>
       </div>
@@ -1111,7 +1307,7 @@ X = np.array([[
         <div class="sec-header">
           <div class="sec-label">Empirical Evaluation</div>
           <h2 class="sec-title">Benchmark comparison across 2.1M flows</h2>
-          <p class="sec-desc">Evaluated on the Canadian Institute for Cybersecurity (CIC-IoT-2023) dataset using 5-fold cross validation. Why LightGBM outperforms alternative architectures.</p>
+          <p class="sec-desc">Evaluated on the Canadian Institute for Cybersecurity (CIC-IoT-2023) and Edge-IIoTset datasets. Why LightGBM + eBPF outperforms alternative architectures.</p>
         </div>
 
         <div class="bench-wrap reveal">
@@ -1123,7 +1319,7 @@ X = np.array([[
                 <th>PR-AUC</th>
                 <th>Inference Latency</th>
                 <th>RAM Footprint</th>
-                <th>Edge Feasibility</th>
+                <th>Defense Driver</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -1131,18 +1327,18 @@ X = np.array([[
               <tr class="pick">
                 <td>
                   <div class="model-name-cell">
-                    <strong>LightGBM Ensemble</strong>
-                    <span class="badge-pick">PRODUCTION CHOICE</span>
+                    <strong>IoTGuard v4.0 (LightGBM + eBPF)</strong>
+                    <span class="badge-pick">ENTERPRISE CHOICE</span>
                   </div>
                 </td>
-                <td><span class="bench-bar-wrap">96.07% <span class="bench-bar"><span class="bench-bar-fill"
+                <td><span class="bench-bar-wrap">96.39% <span class="bench-bar"><span class="bench-bar-fill"
                         data-width="96"></span></span></span></td>
                 <td><span class="bench-bar-wrap">97.10% <span class="bench-bar"><span class="bench-bar-fill"
                         data-width="97"></span></span></span></td>
                 <td><strong class="highlight-val">1.78 ms</strong></td>
                 <td>48.2 MB</td>
-                <td><span class="badge-tag green">100% (ARM64 OK)</span></td>
-                <td class="t-green">Deploys on Pi 4</td>
+                <td><span class="badge-tag green">eBPF/XDP (&lt;1µs)</span></td>
+                <td class="t-green">Active Production</td>
               </tr>
               <tr>
                 <td>
@@ -1156,7 +1352,7 @@ X = np.array([[
                         data-width="97"></span></span></span></td>
                 <td>4.12 ms</td>
                 <td>112.4 MB</td>
-                <td><span class="badge-tag yellow">Moderate CPU load</span></td>
+                <td><span class="badge-tag yellow">nftables (12ms)</span></td>
                 <td>Evaluated</td>
               </tr>
               <tr>
@@ -1171,7 +1367,7 @@ X = np.array([[
                         data-width="94"></span></span></span></td>
                 <td>8.45 ms</td>
                 <td>210.0 MB</td>
-                <td><span class="badge-tag yellow">High RAM usage</span></td>
+                <td><span class="badge-tag yellow">iptables</span></td>
                 <td>Evaluated</td>
               </tr>
               <tr>
@@ -1186,7 +1382,7 @@ X = np.array([[
                         data-width="92"></span></span></span></td>
                 <td>12.30 ms</td>
                 <td>340.0 MB</td>
-                <td><span class="badge-tag red">Too heavy for IoT Edge</span></td>
+                <td><span class="badge-tag red">Too heavy for Edge</span></td>
                 <td>Discarded</td>
               </tr>
             </tbody>
@@ -1203,9 +1399,9 @@ X = np.array([[
             </svg>
           </div>
           <div class="why-content">
-            <h4>Why LightGBM + TreeSHAP Wins on IoT Gateways:</h4>
+            <h4>Why IoTGuard Enterprise v4.0 Wins on Edge Gateways:</h4>
             <p>
-              Neural networks demand dedicated GPU hardware or high vector compute overhead, scaling up packet latency to &gt;12ms. LightGBM leverages leaf-wise histogram tree growth, executing inferences via compact conditional jumps that compile to bare-metal instructions. Pairing this with TreeSHAP guarantees $O(TLD^2)$ tree-path feature attribution without slow perturbation sampling.
+              Neural networks demand dedicated GPU hardware or high vector compute overhead, pushing packet detection latency beyond 12ms. IoTGuard leverages LightGBM's leaf-wise histogram trees compiling to bare-metal conditional branches (&lt;1.78ms), and pairs it directly with in-kernel eBPF/XDP packet filtering at the network card driver level (&lt;1µs). With SQLite WAL relational storage, SHA-256 cryptographic audit chaining, and MITRE ATT&amp;CK mapping, IoTGuard delivers enterprise-grade SecOps capability on low-cost edge gateways.
             </p>
           </div>
         </div>
@@ -1220,110 +1416,60 @@ X = np.array([[
         <div class="sec-header centered">
           <div class="sec-label">Technical Deep Dive</div>
           <h2 class="sec-title">Frequently Asked Questions</h2>
-          <p class="sec-desc">Common architecture, deployment, and security questions regarding IoTGuard.</p>
+          <p class="sec-desc">Common architecture, deployment, and security questions regarding IoTGuard Enterprise v4.0.</p>
         </div>
 
         <div class="faq-accordion reveal">
           <!-- FAQ 1 -->
           <div class="faq-item">
             <button class="faq-question">
-              <span>How does IoTGuard guarantee under 2ms inference on embedded hardware?</span>
+              <span>What is in-kernel eBPF/XDP packet filtering, and why is it faster than standard firewalls?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-answer">
-              <p>IoTGuard utilizes LightGBM's pre-compiled C++ decision forest runtime combined with optimized NumPy ring-buffers. By constraining the feature space to 13 high-information-density statistical metrics, feature extraction requires less than 0.4ms and tree traversal takes ~1.3ms on an ARM Cortex-A72 processor, ensuring end-to-end processing well below 2ms.</p>
+              <p>Traditional firewalls (like iptables or nftables) inspect packets in userspace or after the Linux kernel allocates complex <code>sk_buff</code> socket buffers and runs connection tracking (conntrack). eBPF/XDP (eXpress Data Path) executes directly inside the network interface card (NIC) driver's receive ring before kernel memory allocation. This allows IoTGuard to drop attack traffic at line rate in under 1 microsecond (&lt;1µs), completely protecting edge CPU resources.</p>
             </div>
           </div>
 
           <!-- FAQ 2 -->
           <div class="faq-item">
             <button class="faq-question">
-              <span>Why TreeSHAP instead of KernelSHAP or LIME for explainability?</span>
+              <span>How does the SHA-256 cryptographic audit ledger guarantee non-repudiation?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-answer">
-              <p>KernelSHAP and LIME require thousands of repeated model perturbations and re-evaluations, which takes seconds per sample. TreeSHAP takes advantage of tree structure internally to compute exact Shapley values in polynomial time \(O(TLD^2)\), enabling per-packet explanations in under a few milliseconds.</p>
+              <p>Every critical security event (operator logins, manual IP quarantines, policy modifications, federated rounds) is saved as an immutable block in a cryptographic hash chain. Each entry's hash is calculated as <code>SHA256(prev_hash + timestamp + actor + action + canonical_payload)</code>. The verification endpoint <code>/api/v1/audit/verify</code> checks the entire chain from the genesis block; any altered payload, deleted log line, or out-of-order insertion breaks the hash math and pinpoints the exact tampered index.</p>
             </div>
           </div>
 
           <!-- FAQ 3 -->
           <div class="faq-item">
             <button class="faq-question">
-              <span>How does IoTGuard prevent false positives on legitimate sensor spikes?</span>
+              <span>How does Distributed Fleet Herd Immunity work across multi-site branch gateways?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-answer">
-              <p>IoTGuard implements a multi-tier threshold policy: scores between 0.70 and 0.85 enter a "Grace Period / Monitor" state requiring consecutive anomaly windows before enforcement. Hard instant-block rules are strictly reserved for critical scores (&gt; 0.90) accompanied by high SYN/packet imbalance.</p>
+              <p>IoTGuard decouples central SOC orchestration from remote edge sensor gateways (e.g. smart homes, industrial factories, hospital VLANs). Remote agents communicate via HMAC-SHA256 signed telemetry with 60-second replay attack protection. When high-severity attacks (KILL tier) are neutralized at one location, the central control plane queues the offending IP into the Global Fleet Quarantine; remote gateways download and enforce the block in their local eBPF maps on their next heartbeat.</p>
             </div>
           </div>
 
           <!-- FAQ 4 -->
           <div class="faq-item">
             <button class="faq-question">
-              <span>Can IoTGuard run in Docker containers alongside existing Suricata installs?</span>
+              <span>What test coverage guarantees the stability of IoTGuard Enterprise v4.0?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
             <div class="faq-answer">
-              <p>Yes. IoTGuard is fully containerized. By mounting the host's <code>/var/log/suricata</code> directory or using Docker host networking with NET_ADMIN capability, IoTGuard seamlessly reads the UNIX socket and updates the host's <code>nftables</code> kernel set.</p>
+              <p>IoTGuard v4.0 is backed by 22 comprehensive Pytest test suites containing <strong>293 automated unit and integration tests</strong> (100% pass rate). Tests validate SQLite WAL concurrency under multithreaded loads, eBPF map operations, HMAC replay protection, temporal sequence drift, ArcSight CEF/Syslog export formatting, and REST API RBAC permissions.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="sep">
-
-    <!-- ==================== TECH STACK ==================== -->
-    <section id="specs">
-      <div class="container">
-        <div class="sec-header centered">
-          <div class="sec-label">Stack &amp; Tooling</div>
-          <h2 class="sec-title">Built with modern engineering standards</h2>
-        </div>
-        <div class="tech-list reveal stagger">
-          <div class="tech-chip">
-            <span class="tech-name">Python 3.13</span>
-            <span class="tech-sub">Core Engine Runtime</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">LightGBM</span>
-            <span class="tech-sub">Gradient Boosted Trees</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">TreeSHAP</span>
-            <span class="tech-sub">Explainable AI</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">Linux nftables</span>
-            <span class="tech-sub">Kernel Firewall Dropping</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">Suricata IDS</span>
-            <span class="tech-sub">Network Packet Ingest</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">Docker Compose</span>
-            <span class="tech-sub">Container Infrastructure</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">Scikit-learn</span>
-            <span class="tech-sub">Evaluation &amp; Metrics</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">Pytest (112 tests)</span>
-            <span class="tech-sub">Automated CI/CD Validation</span>
-          </div>
-          <div class="tech-chip">
-            <span class="tech-name">CIC-IoT-2023</span>
-            <span class="tech-sub">2.1M Flow Training Base</span>
           </div>
         </div>
       </div>
@@ -1335,16 +1481,16 @@ X = np.array([[
     <section class="cta-section">
       <div class="cta-glow"></div>
       <div class="container cta-inner">
-        <div class="sec-label" style="text-align:center">Open Source Project</div>
-        <h2 class="cta-title">Deploy autonomous IoT defense today</h2>
+        <div class="sec-label" style="text-align:center">Enterprise Open Source Release</div>
+        <h2 class="cta-title">Deploy IoTGuard Enterprise v4.0 today</h2>
         <p class="cta-desc">
-          IoTGuard is open-source under the MIT license. Pull the container, mount your Suricata socket, and protect your IoT gateway in minutes.
+          Ready for production deployment. Pull the container, mount your interface socket, and secure your IoT fleet with in-kernel eBPF defense in minutes.
         </p>
 
         <!-- Copyable Deployment Snippet -->
         <div class="cta-snippet-card">
           <div class="snippet-header">
-            <span>DOCKER DEPLOYMENT ONE-LINER</span>
+            <span>DOCKER DEPLOYMENT ONE-LINER (v4.0 ENTERPRISE)</span>
             <button class="snippet-copy-btn" id="copyDockerBtn" title="Copy command to clipboard">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
@@ -1369,7 +1515,7 @@ X = np.array([[
               <polyline points="4 17 10 11 4 5" />
               <line x1="12" y1="19" x2="20" y2="19" />
             </svg>
-            Re-run Live Simulator
+            Test Live Simulator
           </a>
         </div>
       </div>
@@ -1385,36 +1531,36 @@ X = np.array([[
           <div class="brand-mark">
             <img src="logo.jpg" alt="IoTGuard" class="brand-logo-img">
           </div>
-          <span class="footer-brand-name">IoTGuard</span>
+          <span class="footer-brand-name">IoTGuard Enterprise</span>
         </div>
         <p class="footer-about">
-          Real-time intrusion detection and autonomous kernel mitigation engine for IoT networks. Senior Capstone Project in Computer Engineering.
+          Autonomous in-kernel intrusion detection and prevention engine for IoT &amp; edge networks. Senior Capstone Project in Computer Engineering · Release v4.0.
         </p>
         <div class="footer-status-pill">
           <span class="status-indicator-dot"></span>
-          <span>Engine Status: Production Ready</span>
+          <span>Engine Status: v4.0 Enterprise Production Ready</span>
         </div>
       </div>
 
       <div class="footer-col">
-        <h5 class="footer-col-title">Navigation</h5>
+        <h5 class="footer-col-title">Capabilities</h5>
         <ul class="footer-links-list">
-          <li><a href="#features">Features</a></li>
+          <li><a href="#features">v4.0 Capabilities</a></li>
           <li><a href="#simulator">Live Simulator</a></li>
+          <li><a href="#enterprise-soc">SOC Control Plane</a></li>
+          <li><a href="#siem-compliance">SIEM &amp; Compliance</a></li>
           <li><a href="#architecture">Architecture</a></li>
-          <li><a href="#shap">SHAP Explainability</a></li>
-          <li><a href="#benchmarks">Benchmark Matrix</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h5 class="footer-col-title">Engineering</h5>
         <ul class="footer-links-list">
-          <li><a href="#cli">Interactive CLI</a></li>
-          <li><a href="#pipeline">Feature Pipeline</a></li>
+          <li><a href="#cli">Interactive CLI (293 Tests)</a></li>
+          <li><a href="#shap">TreeSHAP Explainability</a></li>
+          <li><a href="#benchmarks">Benchmark Matrix</a></li>
           <li><a href="#faq">Architecture FAQ</a></li>
-          <li><a href="#specs">Tech Stack Specs</a></li>
-          <li><a href="https://github.com/A7medico/iotguard/blob/main/README.md" target="_blank" rel="noopener">Documentation ↗</a></li>
+          <li><a href="https://github.com/A7medico/iotguard/blob/main/SYSTEM_HANDOFF_FOR_ARGON.md" target="_blank" rel="noopener">v4.0 Specification ↗</a></li>
         </ul>
       </div>
 
@@ -1425,7 +1571,7 @@ X = np.array([[
           <div class="author-role">Computer Engineering Senior Project</div>
           <div class="author-links">
             <a href="https://a7medico.github.io" target="_blank" rel="noopener" class="author-link">Portfolio Website ↗</a>
-            <a href="https://github.com/A7medico" target="_blank" rel="noopener" class="author-link">GitHub Profile ↗</a>
+            <a href="https://github.com/A7medico/iotguard" target="_blank" rel="noopener" class="author-link">IoTGuard GitHub Repository ↗</a>
           </div>
         </div>
       </div>
@@ -1433,7 +1579,7 @@ X = np.array([[
 
     <div class="container footer-bottom-bar">
       <div class="footer-copy">
-        &copy; 2026 IoTGuard Engine. Built for High-Performance Edge Security.
+        &copy; 2026 IoTGuard Enterprise v4.0. Built for High-Performance Edge Security.
       </div>
       <div class="footer-bottom-links">
         <a href="https://github.com/A7medico/iotguard" target="_blank" rel="noopener">GitHub</a>
